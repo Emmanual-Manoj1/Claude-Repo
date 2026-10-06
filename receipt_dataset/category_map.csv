@@ -89,7 +89,7 @@ ice creams and sorbets,498,Mini McFlurry,Frozen food
 potato crisps,497,Walkers,Crisps & snacks
 sweeteners,494,Pure Creatine Monohydrate,Other
 fruit juices,489,Apple Pear & Asparagus,Soft drinks & juice
-meat preparations,477,Chicken Kievs,Fresh meat
+meat preparations,477,Chicken Kievs,
 dried plant-based foods,441,Sundried Tomatoes,
 cow cheeses,441,Cornish Cove Cheddar,Cheese
 vegetable fats,438,Scottish Rapesed Oil,
@@ -116,7 +116,7 @@ vegetable oils,352,Scottish Rapesed Oil,Other
 dried fruits,348,Mixed Dried Fruit,Other
 poultry meals,347,2 Duck Breast. Portions,Ready meals & sandwiches
 plant-based pickles,347,Pitted Black Olives,Sauces & condiments
-vegetable-based foods and beverages,346,Swede,Fresh vegetables
+vegetable-based foods and beverages,346,Swede,
 canned vegetables,346,Petit Pois in Water,Tinned & jarred
 beers,344,London Pride,Alcohol
 legume seeds,336,British Petit Pois,
@@ -363,7 +363,7 @@ coconut milks and creams,76,Coconut Milk,Milk & cream
 barbecue sauces,76,Hot Chipotle Chilli Paste M&S,Sauces & condiments
 mueslis with fruits,76,Muesli,"Pasta, rice & grains"
 vegetarian balls,76,Red Pepper & Chiplote Falafel,
-fries,75,Crinkle Cut Chips,
+fries,75,Crinkle Cut Chips,Frozen food
 citrus,74,Grapefruit Segments in Fruit Juice,Fresh fruit
 simple syrups,74,Agave,Tinned & jarred
 soy sauces,74,Organic Japanese Yaemon Tamari Soya Sauce,Sauces & condiments
@@ -525,7 +525,7 @@ halloumi,43,Sussex Halloumi,Cheese
 cypriot cheeses,43,Sussex Halloumi,Cheese
 mineral waters,43,Sparkling Spring Water,Soft drinks & juice
 pancakes,43,Buttermilk Pancakes,Bread & bakery
-friands,43,Dinky Sausage Rolls,
+friands,43,Dinky Sausage Rolls,Ready meals & sandwiches
 blueberries,43,Mixed Berries,Fresh fruit
 greek cheeses,43,Feta,Cheese
 cheese spreads,43,Fat Free Natural Cottage Cheese,Cheese
