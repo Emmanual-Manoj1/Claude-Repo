@@ -1,0 +1,100 @@
+{"id": "test-000000", "input": "F KRO AVOCADO BAG", "target": "Avocados", "category": "produce", "brand": "KRO", "size": "BAG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000001", "input": "DIARNOND   CRYSTAL   KOSHER   S4LT   26OZ", "target": "Salt", "category": "pantry", "brand": "DIAMOND CRYSTAL", "size": "26OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000002", "input": "BUDWEISER PALE ALE 24", "target": "Beer", "category": "alcohol", "brand": "BUDWEISER", "size": "24PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000003", "input": "N MM MOZ  C#S 8 OZ TF", "target": "Mozzarella Cheese", "category": "dairy", "brand": "MM", "size": "8OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000004", "input": "TILLAMOOK SHRP CHEDR EA", "target": "Cheddar Cheese", "category": "dairy", "brand": "TILLAMOOK", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000005", "input": "SKIPPY 40 OZ CRNCHY PEANUT BUTTR", "target": "Peanut Butter", "category": "pantry", "brand": "SKIPPY", "size": "40OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000006", "input": "BAND-AID FLEXIBLE FAB BAND", "target": "Bandages", "category": "pharmacy", "brand": "BAND-AID", "size": "ASST", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000007", "input": "SVVEET   (PEAM   BTR    20   G   N", "target": "Butter", "category": "dairy", "brand": null, "size": "250G", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000008", "input": "F NESPRESSO BREAK BLEND K CUPS", "target": "Coffee Pods", "category": "beverages", "brand": "NESPRESSO", "size": "10CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000009", "input": "ORG PETE AND GERRYS 6CT EGGS LARGE", "target": "Eggs", "category": "dairy", "brand": "PETE AND GERRYS", "size": "6CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000010", "input": "46984 GRTD PARM", "target": "Parmesan Cheese", "category": "dairy", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000011", "input": "T LB CHERRY TOMS T", "target": "Tomatoes", "category": "produce", "brand": null, "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000012", "input": "365 PURE PREMIUM ORNG JCE", "target": "Orange Juice", "category": "beverages", "brand": "365", "size": "1.75L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000013", "input": "* ALTER ECO CHOCOLATE DARK 70% 200G N", "target": "Dark Chocolate", "category": "confectionery", "brand": "ALTER ECO", "size": "200G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000014", "input": "GREEN & BLACKS DARK CHOC 85% COCOA", "target": "Dark Chocolate", "category": "confectionery", "brand": "GREEN & BLACKS", "size": "100G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000015", "input": "* 52OZ OJ", "target": "Orange Juice", "category": "beverages", "brand": null, "size": "52OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000016", "input": "TOMS KG", "target": "Tomatoes", "category": "produce", "brand": null, "size": "KG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000017", "input": "HARVEST HONE HAM F", "target": "Sliced Ham", "category": "meat", "brand": "HARVEST", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000018", "input": "F SLTD ALMND NF", "target": "Almonds", "category": "snacks", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000019", "input": "FRESH MART CHRY TMTS LB B", "target": "Tomatoes", "category": "produce", "brand": "FRESH MART", "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000020", "input": "PFRDU CHICXEN THGH 2LB B", "target": "Chicken Thighs", "category": "meat", "brand": "PERDUE", "size": "2LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000021", "input": "43494 T LIGHT SOUR CRM", "target": "Sour Cream", "category": "dairy", "brand": "DAISY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000022", "input": "NATURE NATE'S CLVR HNY 16 OZ", "target": "Honey", "category": "pantry", "brand": "NATURE NATE'S", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000023", "input": "N PANTENE DLY MSTR SHMP", "target": "Shampoo", "category": "personal care", "brand": "PANTENE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000024", "input": "VFGETABLE OIL VVESSON 1", "target": "Vegetable Oil", "category": "pantry", "brand": "WESSON", "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000025", "input": "81156 N SUNBEAM BRD WHITE", "target": "White Bread", "category": "bakery", "brand": "SUNBEAM", "size": "800G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000026", "input": "F EXCLLNC DARK CHO LINDT", "target": "Dark Chocolate", "category": "confectionery", "brand": "LINDT", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000027", "input": "LUNDBERG BROWN RICE", "target": "Brown Rice", "category": "pantry", "brand": "LUNDBERG", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000028", "input": "#HERSHEYS  EXCELLENCE  DARK  CHOCOLAIF", "target": "Dark Chocolate", "category": "confectionery", "brand": "HERSHEYS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000029", "input": "SB   TOMS   ON    THE   YINE", "target": "Tomatoes", "category": "produce", "brand": "SB", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000030", "input": "TRIDENT PPRMNT GUM 3PK", "target": "Chewing Gum", "category": "confectionery", "brand": "TRIDENT", "size": "3PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000031", "input": "FRISSKIES DRY CAT FOOD 24C", "target": "Cat Food", "category": "pet", "brand": "FRISKIES", "size": "24CT", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000032", "input": "KRAFT SHREDDED CHEDDAR", "target": "Cheddar Cheese", "category": "dairy", "brand": "KRAFT", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000033", "input": "ORG DSN SPR WAT 16.9 Z E", "target": "Bottled Water", "category": "beverages", "brand": "DASANI", "size": "16.9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000034", "input": "PLUGRA UNSALTED BUTTER N", "target": "Butter", "category": "dairy", "brand": "PLUGRA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000035", "input": "LUNDBERG BROWN RICE WHOLE GRAIN", "target": "Brown Rice", "category": "pantry", "brand": "LUNDBERG", "size": "1KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000036", "input": "* DOVE DEODRNT 50", "target": "Deodorant", "category": "personal care", "brand": "DOVE", "size": "50ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000037", "input": "EGGLANDS BEEST BROWN EGGS 1DZ", "target": "Eggs", "category": "dairy", "brand": "EGGLANDS BEST", "size": "1DZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000038", "input": "74640 #PPS DIET COLA 2", "target": "Diet Cola", "category": "beverages", "brand": "PEPSI", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000039", "input": "CREAM CHEESE SPREAD 227 G TF", "target": "Cream Cheese", "category": "dairy", "brand": null, "size": "227G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000040", "input": "* 1% LOWFAT MILK FT", "target": "Low Fat Milk", "category": "dairy", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000041", "input": "PEETS MEDIUM ROAST CFE", "target": "Coffee Beans", "category": "beverages", "brand": "PEETS", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000042", "input": "HICKORY SMK BCON OSCAR", "target": "Bacon", "category": "meat", "brand": "OSCAR MAYER", "size": "1LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000043", "input": "* ORG GUERRERO CORN TORTLA 1", "target": "Tortillas", "category": "bakery", "brand": "GUERRERO", "size": "10CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000044", "input": "WESSON CANOLA OIL B", "target": "Vegetable Oil", "category": "pantry", "brand": "WESSON", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000045", "input": "* SPRITE 7UP SDA F", "target": "Lemon Lime Soda", "category": "beverages", "brand": "SPRITE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000046", "input": "T MM BLUEBERRIES PINT", "target": "Blueberries", "category": "produce", "brand": "MM", "size": "1PT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000047", "input": "45621 F STARBUCKS K-CUP PODS", "target": "Coffee Pods", "category": "beverages", "brand": "STARBUCKS", "size": "10CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000048", "input": "ALUM FOIL 200SQFT", "target": "Aluminum Foil", "category": "household", "brand": null, "size": "200SQFT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000049", "input": "T MILKA MK CHOCOLATE BAR", "target": "Milk Chocolate", "category": "confectionery", "brand": "MILKA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000050", "input": "HORIZON 1% LOWFAT MILK 1/2GAL B", "target": "Low Fat Milk", "category": "dairy", "brand": "HORIZON", "size": "1/2GAL", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000051", "input": "WONDERFUL SALTED ALMND", "target": "Almonds", "category": "snacks", "brand": "WONDERFUL", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000052", "input": "*   SENSODYNE   WHTNG   TTHPST  4   OZ", "target": "Toothpaste", "category": "personal care", "brand": "SENSODYNE", "size": "4OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000053", "input": "GRANULATED SUG C&H B", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000054", "input": "F FRISKIES 3OZ WET CAT FOOD PATE", "target": "Cat Food", "category": "pet", "brand": "FRISKIES", "size": "3OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000055", "input": "MSSN TORTLA FLR SOFT TACO 8CT B", "target": "Tortillas", "category": "bakery", "brand": "MISSION", "size": "8CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000056", "input": "MORTON  SEA  SALT  26OZ", "target": "Salt", "category": "pantry", "brand": "MORTON", "size": "26OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000057", "input": "ORG MXWLL HOUSE COF GROUND MED", "target": "Ground Coffee", "category": "beverages", "brand": "MAXWELL HOUSE", "size": "250G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000058", "input": "LIPTOON TEA BG 100  CT EA", "target": "Tea Bags", "category": "beverages", "brand": "LIPTON", "size": "100CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000059", "input": "* IRISH MSTRZNG BODY  VVSH", "target": "Body Wash", "category": "personal care", "brand": "IRISH SPRING", "size": "22OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000060", "input": "TTNS SUP PZZA EA", "target": "Frozen Pizza", "category": "frozen", "brand": "TOTINOS", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000061", "input": "N SPAG RONZONI 1LB NF", "target": "Spaghetti", "category": "pantry", "brand": "RONZONI", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000062", "input": "NEW YORK STRP STK LB", "target": "Steak", "category": "meat", "brand": null, "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000063", "input": "F MEOW MIX INDOOR CAT FOOD", "target": "Cat Food", "category": "pet", "brand": "MEOW MIX", "size": "3OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000064", "input": "#BLUEBERRIES  FT", "target": "Blueberries", "category": "produce", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000065", "input": "STEL ART LIGHT BEER 6 PK", "target": "Beer", "category": "alcohol", "brand": "STELLA ARTOIS", "size": "6PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000066", "input": "BLUE   BFFL   DRY   DOG   FOOD", "target": "Dog Food", "category": "pet", "brand": "BLUE BUFFALO", "size": "13OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000067", "input": "BAREFOOT MERLO 750ML E", "target": "Red Wine", "category": "alcohol", "brand": "BAREFOOT", "size": "750ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000068", "input": "BLUE DIAMOND SLTD ALMND", "target": "Almonds", "category": "snacks", "brand": "BLUE DIAMOND", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000069", "input": "#DIAMOND CRYSTAL 3LB IODIZED; SALT", "target": "Salt", "category": "pantry", "brand": "DIAMOND CRYSTAL", "size": "3LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000070", "input": "29216   GRAPE   JELLY", "target": "Jam", "category": "pantry", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000071", "input": "N OKG HARIBO SOUR GMMY VVRMS", "target": "Gummy Candy", "category": "confectionery", "brand": "HARIBO", "size": "200G", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000072", "input": "#100% APPLE JUICE TREE", "target": "Apple Juice", "category": "beverages", "brand": "TREE TOP", "size": "64OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000073", "input": "LAYS SOUR CRMY ONN CHIP", "target": "Potato Chips", "category": "snacks", "brand": "LAYS", "size": "8OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000074", "input": "NATUR OWN 21 WH GRNS BREAD 20 Z", "target": "Wheat Bread", "category": "bakery", "brand": "NATURES OWN", "size": "20OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000075", "input": "BRDS EYE STE BRCCL 16OZ X", "target": "Frozen Vegetables", "category": "frozen", "brand": "BIRDS EYE", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000076", "input": "*  ORG  OLD   FASHIONED  OAT  QUAK", "target": "Oatmeal", "category": "pantry", "brand": "QUAKER", "size": "18OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000077", "input": "BRTLL EXTRA VIRGIN OLIVE OIL", "target": "Olive Oil", "category": "pantry", "brand": "BERTOLLI", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000078", "input": "ORG PEPPERIDGE FARM OTML RAISIN CKIES", "target": "Cookies", "category": "snacks", "brand": "PEPPERIDGE FARM", "size": "13OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000079", "input": "T GHIRARDELLI WH CHOCO BR 3.5OZ", "target": "White Chocolate", "category": "confectionery", "brand": "GHIRARDELLI", "size": "3.5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000080", "input": "OATLY   OATMILK   ORIGINAL    1L", "target": "Oat Milk", "category": "dairy", "brand": "OATLY", "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000081", "input": "DRISC BLUEB PINT 1", "target": "Blueberries", "category": "produce", "brand": "DRISCOLLS", "size": "18OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000082", "input": "BERTOLLI OLIV OIL EXTRA VIRGIN", "target": "Olive Oil", "category": "pantry", "brand": "BERTOLLI", "size": "16.9OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000083", "input": "BAND-AID BANDAGES 60", "target": "Bandages", "category": "pharmacy", "brand": "BAND-AID", "size": "60CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000084", "input": "ORG  POWERA  8PK  ELECTR  DRNK", "target": "Sports Drink", "category": "beverages", "brand": "POWERADE", "size": "8PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000085", "input": "PURINA 16LB CAT FOOD X", "target": "Cat Food", "category": "pet", "brand": "PURINA", "size": "16LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000086", "input": "HELLMANNS RREAL MAYONNAISE", "target": "Mayonnaise", "category": "pantry", "brand": "HELLMANNS", "size": "30OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "test-000087", "input": "GALAXY    MK   CHOC", "target": "Milk Chocolate", "category": "confectionery", "brand": "GALAXY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000088", "input": "SECRET INVSBL SOLI ANTIPERSPIRANT", "target": "Deodorant", "category": "personal care", "brand": "SECRET", "size": "50ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000089", "input": "N KRAFT PARMIGIANO REGGIANO", "target": "Parmesan Cheese", "category": "dairy", "brand": "KRAFT", "size": "5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000090", "input": "ORGANIC VALLEY 1% LOWFA MILK", "target": "Low Fat Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": "1GAL", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000091", "input": "31469 T HF HAM DELI SLCD 9 OZ T", "target": "Sliced Ham", "category": "meat", "brand": "HILLSHIRE FARM", "size": "9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000092", "input": "T FRENCH FRIES SB 32OZ", "target": "French Fries", "category": "frozen", "brand": "SB", "size": "32OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000093", "input": "ORG PLUGRA SALT BTR F", "target": "Butter", "category": "dairy", "brand": "PLUGRA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000094", "input": "75565 N FANCY FEAST CAT FOOD", "target": "Cat Food", "category": "pet", "brand": "FANCY FEAST", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000095", "input": "N GREEN GIANT MXD VEGS FZN", "target": "Frozen Vegetables", "category": "frozen", "brand": "GREEN GIANT", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000096", "input": "* MEOW MIX INDR CAT FD N", "target": "Cat Food", "category": "pet", "brand": "MEOW MIX", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000097", "input": "N SUNBEAM CLASSIC WHITE BREAD", "target": "White Bread", "category": "bakery", "brand": "SUNBEAM", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "test-000098", "input": "JOSH CELLARS MERLOT 1.5", "target": "Red Wine", "category": "alcohol", "brand": "JOSH CELLARS", "size": "1.5L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "test-000099", "input": "82021 BEST FOODS 30OZ LT MAYONN", "target": "Mayonnaise", "category": "pantry", "brand": "BEST FOODS", "size": "30OZ", "ocr_noise": "none", "unseen_brand": false}

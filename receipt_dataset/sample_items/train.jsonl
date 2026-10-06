@@ -1,0 +1,500 @@
+{"id": "train-000000", "input": "43063 #ORVILLE 4.4OZ WHITE CHDDR POPCORN", "target": "Popcorn", "category": "snacks", "brand": "ORVILLE", "size": "4.4OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000001", "input": "* 8REAKSTONE LIGHT SOURR CREAM 16OZ", "target": "Sour Cream", "category": "dairy", "brand": "BREAKSTONE", "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000002", "input": "F TOST NAC CHSE TORTLA CHPS", "target": "Tortilla Chips", "category": "snacks", "brand": "TOSTITOS", "size": "13OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000003", "input": "N ORG WH NIONS T", "target": "Onions", "category": "produce", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000004", "input": "#MO|TRIN ACETAMINOPHEN", "target": "Pain Reliever", "category": "pharmacy", "brand": "MOTRIN", "size": "100CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000005", "input": "* ORG DE CECCO 500 G THIN SPAG", "target": "Spaghetti", "category": "pantry", "brand": "DE CECCO", "size": "500G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000006", "input": "57880  BLUE  BFPL  30LB  DOG  FD  TF", "target": "Dog Food", "category": "pet", "brand": "BLUE BUFFALO", "size": "30LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000007", "input": "#ORG BLUE BUFFALO DRY DOG FOOD", "target": "Dog Food", "category": "pet", "brand": "BLUE BUFFALO", "size": "6KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000008", "input": "T   SUNRISE   LRG   SHRNP   RAW", "target": "Shrimp", "category": "seafood", "brand": "SUNRISE", "size": "1LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000009", "input": "* BOUNTY PAPR TOWELS", "target": "Paper Towels", "category": "household", "brand": "BOUNTY", "size": "12 ROLLS", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000010", "input": "WRIGLEYS SUG FREE GUM", "target": "Chewing Gum", "category": "confectionery", "brand": "WRIGLEYS", "size": "14CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000011", "input": "N ORG QUAKER CRNCHY GRAN BARS TF", "target": "Granola Bars", "category": "snacks", "brand": "QUAKER", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000012", "input": "ORG CRMY CHS BRI 227 GM", "target": "Cream Cheese", "category": "dairy", "brand": null, "size": "227G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000013", "input": "N BAND 60CT", "target": "Bandages", "category": "pharmacy", "brand": null, "size": "60CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000014", "input": "F LENDERS 20OZ PLN BGLS F", "target": "Bagels", "category": "bakery", "brand": "LENDERS", "size": "20OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000015", "input": "BLUE BUFFALO WET DOG FOOD", "target": "Dog Food", "category": "pet", "brand": "BLUE BUFFALO", "size": "30LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000016", "input": "91578 TJ MILK SKIM 2L", "target": "Skim Milk", "category": "dairy", "brand": "TJ", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000017", "input": "6236 NATIVE INVISIBLE SOLID ANTIPERSPIRANT", "target": "Deodorant", "category": "personal care", "brand": "NATIVE", "size": "2PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000018", "input": "N ORG DIGIORNO PEPPERONI PIZZA", "target": "Frozen Pizza", "category": "frozen", "brand": "DIGIORNO", "size": "10.7OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000019", "input": "#DOVE  DEODORANT  5TICK", "target": "Deodorant", "category": "personal care", "brand": "DOVE", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000020", "input": "SIE_TE TORTLA CHP", "target": "Tortilla Chips", "category": "snacks", "brand": "SIETE", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000021", "input": "GRANNY SMITH APPLES", "target": "Apples", "category": "produce", "brand": null, "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000022", "input": "KRO   SWT   POT   F", "target": "Potatoes", "category": "produce", "brand": "KRO", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000023", "input": "#3LB BAG GRANNY SMI APPLE", "target": "Apples", "category": "produce", "brand": null, "size": "3LB BAG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000024", "input": "*  ATLANTlC  SALM  L8  F", "target": "Salmon", "category": "seafood", "brand": null, "size": "LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000025", "input": "T ORG RONZONI THIN SPGHTI I", "target": "Spaghetti", "category": "pantry", "brand": "RONZONI", "size": "1LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000026", "input": "ORG EGGLANDS BEST FREE RAN EGG 6", "target": "Eggs", "category": "dairy", "brand": "EGGLANDS BEST", "size": "6CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000027", "input": "VALU AVOCADOS LARGE", "target": "Avocados", "category": "produce", "brand": "VALU", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000028", "input": "76060 ORG 2LB BROWN RICE WHOLE GRAIN", "target": "Brown Rice", "category": "pantry", "brand": null, "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000029", "input": "N RED BARON SUPREME PZZ", "target": "Frozen Pizza", "category": "frozen", "brand": "RED BARON", "size": "10.7OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000030", "input": "ORG HORIZON 2L WHOLE MLK HOMO", "target": "Whole Milk", "category": "dairy", "brand": "HORIZON", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000031", "input": "ORE-IDA CRINKLE CUT FRIES", "target": "French Fries", "category": "frozen", "brand": "ORE-IDA", "size": "1KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000032", "input": "* BODYARMOR THIR QNCHR 28OZ", "target": "Sports Drink", "category": "beverages", "brand": "BODYARMOR", "size": "28OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000033", "input": "N AFPL JUICE TREE TOP EA", "target": "Apple Juice", "category": "beverages", "brand": "TREE TOP", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000034", "input": "T TILLAMOOK CHOCLT ICE CRM", "target": "Ice Cream", "category": "frozen", "brand": "TILLAMOOK", "size": "1.5QT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000035", "input": "TROLLI 5OZ GUM BRS FT", "target": "Gummy Candy", "category": "confectionery", "brand": "TROLLI", "size": "5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000036", "input": "FLUORIDE TOOTHPASTE", "target": "Toothpaste", "category": "personal care", "brand": "SENSODYNE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000037", "input": "CHIPS CHOCLT CHIP COOKIE", "target": "Cookies", "category": "snacks", "brand": "CHIPS AHOY", "size": "13OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000038", "input": "OREO COOKIE TF", "target": "Cookies", "category": "snacks", "brand": "OREO", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000039", "input": "PRINGLES SEA SALT CHI", "target": "Potato Chips", "category": "snacks", "brand": "PRINGLES", "size": "8OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000040", "input": "89610 C&H 2LB POWDEKED SUGR", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": "2LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000041", "input": "ORGANIC  VAlLEY  1%  LWFT  MILK", "target": "Low Fat Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": "1GAL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000042", "input": "SB   1KG   BPOWN  RICE   EA", "target": "Brown Rice", "category": "pantry", "brand": "SB", "size": "1KG", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000043", "input": "* HORI WHIPPING CRMY 1", "target": "Heavy Cream", "category": "dairy", "brand": "HORIZON", "size": "1PT", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000044", "input": "TJ ASTBANDG` 60CT EA", "target": "Bandages", "category": "pharmacy", "brand": "TJ", "size": "60CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000045", "input": "T KA PLA|N FLR 2LB", "target": "All Purpose Flour", "category": "pantry", "brand": "KING ARTHUR", "size": "2LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000046", "input": "N ORG HEINEKEN LIGHT BEER", "target": "Beer", "category": "alcohol", "brand": "HEINEKEN", "size": "12PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000047", "input": "TYSON CHICKEN THIGHS", "target": "Chicken Thighs", "category": "meat", "brand": "TYSON", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000048", "input": "T HUNTS TOMATO KETCHUP 500ML", "target": "Ketchup", "category": "pantry", "brand": "HUNTS", "size": "500ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000049", "input": "PILL5BURY ALL PURP FLR 5", "target": "All Purpose Flour", "category": "pantry", "brand": "PILLSBURY", "size": "5LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000050", "input": "#MAYO DUKES 400ML", "target": "Mayonnaise", "category": "pantry", "brand": "DUKES", "size": "400ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000051", "input": "#CHICKEN BREAST FILLETS TJ 2PK", "target": "Chicken Breast", "category": "meat", "brand": "TJ", "size": "2PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000052", "input": "FAGE GRK YOGRT VAN 4 PK B", "target": "Greek Yogurt", "category": "dairy", "brand": "FAGE", "size": "4PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000053", "input": "BLUE   DIA   RAW   ALMND   16", "target": "Almonds", "category": "snacks", "brand": "BLUE DIAMOND", "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000054", "input": "AQUAFINA BTTLD WATER", "target": "Bottled Water", "category": "beverages", "brand": "AQUAFINA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000055", "input": "BMBL BEE TUNA IN WTR 1", "target": "Canned Tuna", "category": "seafood", "brand": "BUMBLE BEE", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000056", "input": "56786 DRRISCOLLS 1PT BLUEBERRY  T", "target": "Blueberries", "category": "produce", "brand": "DRISCOLLS", "size": "1PT", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000057", "input": "COLAVITA 16.9OZ EVOO B", "target": "Olive Oil", "category": "pantry", "brand": "COLAVITA", "size": "16.9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000058", "input": "MCCORMICK BLK PEPPER6OZ T", "target": "Black Pepper", "category": "pantry", "brand": "MCCORMICK", "size": "6OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000059", "input": "F SIRLOIN STEAK KG", "target": "Steak", "category": "meat", "brand": null, "size": "KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000060", "input": "#KS   10.3OZ.   TRAIL   MIX", "target": "Mixed Nuts", "category": "snacks", "brand": "KS", "size": "10.3OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000061", "input": "* BERTOLLI OLIVE OIL EXTRA VIRGIN", "target": "Olive Oil", "category": "pantry", "brand": "BERTOLLI", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000062", "input": "F VEGE OIL 48OZ", "target": "Vegetable Oil", "category": "pantry", "brand": null, "size": "48OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000063", "input": "ORG    GV   BRE   SAUSAGE   LNKS", "target": "Sausages", "category": "meat", "brand": "GV", "size": "19OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000064", "input": "T CELSIUS ENRGY DRK 8.4OZ F", "target": "Energy Drink", "category": "beverages", "brand": "CELSIUS", "size": "8.4OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000065", "input": "EARTHBOUND FARM SPINACH", "target": "Spinach", "category": "produce", "brand": "EARTHBOUND FARM", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000066", "input": "#TOTINOS SUP PIZZA 28O", "target": "Frozen Pizza", "category": "frozen", "brand": "TOTINOS", "size": "28OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000067", "input": "NESPRESSO BREAKFAST BLND K CUPS", "target": "Coffee Pods", "category": "beverages", "brand": "NESPRESSO", "size": "12CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000068", "input": "T KETTLE SOUR CREAM ONIO CHIP FT", "target": "Potato Chips", "category": "snacks", "brand": "KETTLE", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000069", "input": "T  TTOBLERONE  200  G  CHOCOLATE  RNILK  BAR  T", "target": "Milk Chocolate", "category": "confectionery", "brand": "TOBLERONE", "size": "200G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000070", "input": "* LOW FAT YOG DANNON 4 PK EA", "target": "Yogurt", "category": "dairy", "brand": "DANNON", "size": "4PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000071", "input": "N   LM   2LLB   BAG  F", "target": "Lemons", "category": "produce", "brand": null, "size": "2LB BAG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000072", "input": "N  HONEY  BEAR  SQUEEZE  16  OZ", "target": "Honey", "category": "pantry", "brand": null, "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000073", "input": "CHIX BRFASI FRESH MART", "target": "Chicken Breast", "category": "meat", "brand": "FRESH MART", "size": "2PK", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000074", "input": "VITAL  FARRNSS  EGGS  LARGEE", "target": "Eggs", "category": "dairy", "brand": "VITAL FARMS", "size": "1DZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000075", "input": "BDYRMR   20OZ   THIS   QUENCHER", "target": "Sports Drink", "category": "beverages", "brand": "BODYARMOR", "size": "20OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000076", "input": "N LINDT MILK CHOCOLATE 1", "target": "Milk Chocolate", "category": "confectionery", "brand": "LINDT", "size": "1.55OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000077", "input": "CREAM CHEESE PHILADELPHIA NF", "target": "Cream Cheese", "category": "dairy", "brand": "PHILADELPHIA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000078", "input": "LINDT WHITE CHOCOLATE", "target": "White Chocolate", "category": "confectionery", "brand": "LINDT", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000079", "input": "BLTHS BABY CARR 5L", "target": "Carrots", "category": "produce", "brand": "BOLTHOUSE", "size": "5LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000080", "input": "* ORG WHOLE BEAN COFF", "target": "Coffee Beans", "category": "beverages", "brand": "LAVAZZA", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000081", "input": "F BONNE MMAMAN STRAWBERRY JAM", "target": "Jam", "category": "pantry", "brand": "BONNE MAMAN", "size": "12OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000082", "input": "F ANGEL SOFT 12RL MEGA ROLL BATH TISSUE", "target": "Toilet Paper", "category": "household", "brand": "ANGEL SOFT", "size": "12RL", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000083", "input": "T LEAN GROUND BF 93/7 NF", "target": "Ground Beef", "category": "meat", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000084", "input": "ACTIVIA STRAWBERRY YOGURT", "target": "Yogurt", "category": "dairy", "brand": "ACTIVIA", "size": "6OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000085", "input": "FRENCHS YELLOW MUSTARD F", "target": "Mustard", "category": "pantry", "brand": "FRENCHS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000086", "input": "T CRIMMWAY SHRDD CRT", "target": "Carrots", "category": "produce", "brand": "GRIMMWAY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000087", "input": "N PANUT BTTR 16OZ TF", "target": "Peanut Butter", "category": "pantry", "brand": null, "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000088", "input": "B/L SKNlS CHIX BREAS FOSTER FARM", "target": "Chicken Breast", "category": "meat", "brand": "FOSTER FARMS", "size": "KG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000089", "input": "#GTRD ELECTR DRK", "target": "Sports Drink", "category": "beverages", "brand": "GATORADE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000090", "input": "CABOT 200G SHARP CHEDDAR", "target": "Cheddar Cheese", "category": "dairy", "brand": "CABOT", "size": "200G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000091", "input": "#DAISY SOUR CRMY 16OZ EA", "target": "Sour Cream", "category": "dairy", "brand": "DAISY", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000092", "input": "84721 GALBANI MOZZRLA CHEESE", "target": "Mozzarella Cheese", "category": "dairy", "brand": "GALBANI", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000093", "input": "OATLY OTMLK OG 32OZ.", "target": "Oat Milk", "category": "dairy", "brand": "OATLY", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000094", "input": "WONDER  SANDW|CH  BRD  WHITF  24OZ  B", "target": "White Bread", "category": "bakery", "brand": "WONDER", "size": "24OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000095", "input": "RESTAURANT STYLE TORTILLA CHIPS 11OZ NF", "target": "Tortilla Chips", "category": "snacks", "brand": null, "size": "11OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000096", "input": "HONEYCR APPL VALU KG", "target": "Apples", "category": "produce", "brand": "VALU", "size": "KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000097", "input": "DIAMOND CRYSTAL 26OZ KSHR SALT B", "target": "Salt", "category": "pantry", "brand": "DIAMOND CRYSTAL", "size": "26OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000098", "input": "PPPRDG FARM 24 Z WHEAT BRD", "target": "Wheat Bread", "category": "bakery", "brand": "PEPPERIDGE FARM", "size": "24OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000099", "input": "CELSIUS 8.4OZ SUG FREE ENRGY DRNK FT", "target": "Energy Drink", "category": "beverages", "brand": "CELSIUS", "size": "8.4OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000100", "input": "13894 ORG VALU SIR STK", "target": "Steak", "category": "meat", "brand": "VALU", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000101", "input": "T MEGA ROLL BATH TISSUE", "target": "Toilet Paper", "category": "household", "brand": "COTTONELLE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000102", "input": "T LAND O LAKES MILK WHL", "target": "Whole Milk", "category": "dairy", "brand": "LAND O LAKES", "size": "1L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000103", "input": "N RED 8.4OZ SUGAR FREE ENRGY DRINK", "target": "Energy Drink", "category": "beverages", "brand": "RED BULL", "size": "8.4OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000104", "input": "F FRESH MART NEW YORK STRP STK", "target": "Steak", "category": "meat", "brand": "FRESH MART", "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000105", "input": "F SIRLOIN STEAK KG NF", "target": "Steak", "category": "meat", "brand": null, "size": "KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000106", "input": "#PERRIER SPARKLING MINERAL WATEr", "target": "Sparkling Water", "category": "beverages", "brand": "PERRIER", "size": "12PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000107", "input": "SB HONEY WHEAT BREAD", "target": "Wheat Bread", "category": "bakery", "brand": "SB", "size": "27OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000108", "input": "WHOLE MK OKGANIC VALLE", "target": "Whole Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000109", "input": "ORGNONEYCRISP APPLES", "target": "Apples", "category": "produce", "brand": null, "size": "LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000110", "input": "64125 ADVIL X STRENGTH 7A BLETS", "target": "Pain Reliever", "category": "pharmacy", "brand": "ADVIL", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000111", "input": "ORG DAWN DSHWSHNG LIQ", "target": "Dish Soap", "category": "household", "brand": "DAWN", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000112", "input": "N TYLENOL IBUPRO TBLTS 200MG 50C", "target": "Pain Reliever", "category": "pharmacy", "brand": "TYLENOL", "size": "50CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000113", "input": "CABOT SHREDD CHDR", "target": "Cheddar Cheese", "category": "dairy", "brand": "CABOT", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000114", "input": "FAIRLIFE MILK SKIM 2 L F", "target": "Skim Milk", "category": "dairy", "brand": "FAIRLIFE", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000115", "input": "ORG THOMAS BAGELS PRE-SLICED", "target": "Bagels", "category": "bakery", "brand": "THOMAS", "size": "6CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000116", "input": "KOSHER SALT 3 LB T", "target": "Salt", "category": "pantry", "brand": null, "size": "3LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000117", "input": "* SPAGHETTI NO 5 16 OZ.", "target": "Spaghetti", "category": "pantry", "brand": null, "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000118", "input": "#SIG CARROTS 2LB", "target": "Carrots", "category": "produce", "brand": "SIG", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000119", "input": "T TOMS TOOTHPASTE", "target": "Toothpaste", "category": "personal care", "brand": "TOMS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000120", "input": "NATUR HTS HOME BEAR SQUE F", "target": "Honey", "category": "pantry", "brand": "NATURE NATE'S", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000121", "input": "EVIAN 1L NTRL SPRG WTR F", "target": "Bottled Water", "category": "beverages", "brand": "EVIAN", "size": "1L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000122", "input": "OLV OL 1L N", "target": "Olive Oil", "category": "pantry", "brand": null, "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000123", "input": "MOTTS APP*L JC UNSWTND 64OZ", "target": "Apple Juice", "category": "beverages", "brand": "MOTTS", "size": "64OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000124", "input": "DUNKIN CFE GR MEDIUM FT", "target": "Ground Coffee", "category": "beverages", "brand": "DUNKIN", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000125", "input": "T STARBUCKS WH BEAN COF", "target": "Coffee Beans", "category": "beverages", "brand": "STARBUCKS", "size": "250G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000126", "input": "65184 LUNDBERG LONG GRN BRWN RICE", "target": "Brown Rice", "category": "pantry", "brand": "LUNDBERG", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000127", "input": "CREEN   GIANT   MIXED   VEGETABLES   FROZEN", "target": "Frozen Vegetables", "category": "frozen", "brand": "GREEN GIANT", "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000128", "input": "#OV 1% LOWFAT MILK 2L B", "target": "Low Fat Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000129", "input": "F TROLLI GOLDBEARS GUMMY 140 G F", "target": "Gummy Candy", "category": "confectionery", "brand": "TROLLI", "size": "140G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000130", "input": "#HEFTY KTCHN TRSH BAGS", "target": "Trash Bags", "category": "household", "brand": "HEFTY", "size": "40CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000131", "input": "64158 BREYERS VNLA ICE CRE", "target": "Ice Cream", "category": "frozen", "brand": "BREYERS", "size": "48OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000132", "input": "SKIPPY   PEANUT   BUTTER   16   OZ", "target": "Peanut Butter", "category": "pantry", "brand": "SKIPPY", "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000133", "input": "T   ORG   S;EL   BUUBLY   750ML", "target": "Sparkling Water", "category": "beverages", "brand": "BUBLY", "size": "750ML", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000134", "input": "T  DE  CECCO  PENNE  PST", "target": "Penne Pasta", "category": "pantry", "brand": "DE CECCO", "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000135", "input": "GRD BEEF 2LB TF", "target": "Ground Beef", "category": "meat", "brand": null, "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000136", "input": "BARILLA 500G MINI PENNE", "target": "Penne Pasta", "category": "pantry", "brand": "BARILLA", "size": "500G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000137", "input": "GREY MUSTAPD P", "target": "Mustard", "category": "pantry", "brand": "GREY POUPON", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000138", "input": "* BOBS RED MILL OLD FASHIONED OATS", "target": "Oatmeal", "category": "pantry", "brand": "BOBS RED MILL", "size": "18OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000139", "input": "* POWERADE ELECTROLYTE DRK", "target": "Sports Drink", "category": "beverages", "brand": "POWERADE", "size": "8PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000140", "input": "#WRIGHT BACON 1LB T", "target": "Bacon", "category": "meat", "brand": "WRIGHT", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000141", "input": "* LNDBRG BROWN RICE", "target": "Brown Rice", "category": "pantry", "brand": "LUNDBERG", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000142", "input": "N KRAFT FRESH MZZRLL", "target": "Mozzarella Cheese", "category": "dairy", "brand": "KRAFT", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000143", "input": "F PENNE RIGATE DE CECCO 1LB", "target": "Penne Pasta", "category": "pantry", "brand": "DE CECCO", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000144", "input": "C#OBANI 4PK PLAI GREE YGRT", "target": "Greek Yogurt", "category": "dairy", "brand": "CHOBANI", "size": "4PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000145", "input": "N VALU LEAN GRND BEEF 93/7 F", "target": "Ground Beef", "category": "meat", "brand": "VALU", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000146", "input": "LITE SOUR CRM BRKSTN", "target": "Sour Cream", "category": "dairy", "brand": "BREAKSTONE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000147", "input": "NATURE MADE DAILY MULTIVITAMIN TABLETS", "target": "Vitamins", "category": "pharmacy", "brand": "NATURE MADE", "size": "100CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000148", "input": "BEEF MIN 2 LB B", "target": "Ground Beef", "category": "meat", "brand": null, "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000149", "input": "CRISCO CAN OIL 1 GAL X", "target": "Vegetable Oil", "category": "pantry", "brand": "CRISCO", "size": "1GAL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000150", "input": "T  KELLOGGS  CHEERIOS   18OZ", "target": "Breakfast Cereal", "category": "pantry", "brand": "KELLOGGS", "size": "18OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000151", "input": "TT  QUAKER  STL  CUT  OAT", "target": "Oatmeal", "category": "pantry", "brand": "QUAKER", "size": "42OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000152", "input": "T DANNON 6 OZ LOW FT YGT", "target": "Yogurt", "category": "dairy", "brand": "DANNON", "size": "6OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000153", "input": "T HF SMK SAUSAGE F", "target": "Sausages", "category": "meat", "brand": "HILLSHIRE FARM", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000154", "input": "F GLAD GARBAGE BAGS DRAW", "target": "Trash Bags", "category": "household", "brand": "GLAD", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000155", "input": "IRIS SPRNG SHWR GEL", "target": "Body Wash", "category": "personal care", "brand": "IRISH SPRING", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000156", "input": "OIKOS GREEK YGT VANL 5", "target": "Greek Yogurt", "category": "dairy", "brand": "OIKOS", "size": "500G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000157", "input": "N  HAAGEN-DAZS ICE  CRM", "target": "Ice Cream", "category": "frozen", "brand": "HAAGEN-DAZS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000158", "input": "POLAND SPRING PURIF WTR", "target": "Bottled Water", "category": "beverages", "brand": "POLAND SPRING", "size": "16.9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000159", "input": "RB ENGY DRNK ORIGINAL 16", "target": "Energy Drink", "category": "beverages", "brand": "RED BULL", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000160", "input": "STARBLICKS FRNCH ROAST WH BEAN", "target": "Coffee Beans", "category": "beverages", "brand": "STARBUCKS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000161", "input": "B RWN rICE 2LB", "target": "Brown Rice", "category": "pantry", "brand": null, "size": "2LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000162", "input": "ORG MICRO POPCORN SK", "target": "Popcorn", "category": "snacks", "brand": "SKINNYPOP", "size": "3CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000163", "input": "T FRESH MART XTRA VRGN OLIV OL", "target": "Olive Oil", "category": "pantry", "brand": "FRESH MART", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000164", "input": "STARBUCKS 1LB FRE RST WHOLE BEAN", "target": "Coffee Beans", "category": "beverages", "brand": "STARBUCKS", "size": "1LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000165", "input": "H NATIV E INVISIBL_E SOLI0 ANTIRERSPIRANT", "target": "Deodorant", "category": "personal care", "brand": "NATIVE", "size": "2PK", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000166", "input": "N 365 HVY DUTY FOIL TF", "target": "Aluminum Foil", "category": "household", "brand": "365", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000167", "input": "ORG GODIVA LINDOR TRFL", "target": "Chocolate Truffles", "category": "confectionery", "brand": "GODIVA", "size": "5.1OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000168", "input": "FOSTER FARMS BNLS  SKNLS CHICCKEN BREAST", "target": "Chicken Breast", "category": "meat", "brand": "FOSTER FARMS", "size": "1.5LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000169", "input": "BUMBLE BEE SOLID WHITE ALBACORE TUNA", "target": "Canned Tuna", "category": "seafood", "brand": "BUMBLE BEE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000170", "input": "STRAWBERRY JAM", "target": "Jam", "category": "pantry", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000171", "input": "N DUNKIN WHOLE BEAN COFF", "target": "Coffee Beans", "category": "beverages", "brand": "DUNKIN", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000172", "input": "88625 T TJ LONG GRN BRWN RCE", "target": "Brown Rice", "category": "pantry", "brand": "TJ", "size": "1KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000173", "input": "F SOUR PATCH GUMMY BEARS", "target": "Gummy Candy", "category": "confectionery", "brand": "SOUR PATCH", "size": "5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000174", "input": "F STRAWBERRY YOGURT ACTIVIA", "target": "Yogurt", "category": "dairy", "brand": "ACTIVIA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000175", "input": "COCA COLA RC 12PK", "target": "Cola", "category": "beverages", "brand": "RC", "size": "12PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000176", "input": "TOM ON THE VIME KG T", "target": "Tomatoes", "category": "produce", "brand": null, "size": "KG", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000177", "input": "N PLANTERS MXD NUTS", "target": "Mixed Nuts", "category": "snacks", "brand": "PLANTERS", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000178", "input": "CLMP   CAT  LL7TR   A&N   40   LB", "target": "Cat Litter", "category": "pet", "brand": "ARM & HAMMER", "size": "40LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000179", "input": "KETTLE 1.5OZ KTTL CHPS FT", "target": "Potato Chips", "category": "snacks", "brand": "KETTLE", "size": "1.5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000180", "input": "#WT  WH  GRN  CRKRS  12  TF", "target": "Crackers", "category": "snacks", "brand": "WHEAT THINS", "size": "12OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000181", "input": "#GLB;ANI MOZZARELLA  CHEESE", "target": "Mozzarella Cheese", "category": "dairy", "brand": "GALBANI", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000182", "input": "#ORG GV AVOC BAG 4 CT B", "target": "Avocados", "category": "produce", "brand": "GV", "size": "4CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000183", "input": "ORBIT PEPP ERMINT GUM 15P", "target": "Chewing Gum", "category": "confectionery", "brand": "ORBIT", "size": "15PC", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000184", "input": "*   PERIER   SELTZER   75", "target": "Sparkling Water", "category": "beverages", "brand": "PERRIER", "size": "750ML", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000185", "input": "HARIBO   SOUR   GMMY   WORM   14", "target": "Gummy Candy", "category": "confectionery", "brand": "HARIBO", "size": "140G", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000186", "input": "F PERDUU CHCKN BREA 1.5LB F", "target": "Chicken Breast", "category": "meat", "brand": "PERDUE", "size": "1.5LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000187", "input": "HARVEST WHT ONION B", "target": "Onions", "category": "produce", "brand": "HARVEST", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000188", "input": "ARM & HAMMER LIQUID DTRGNT 92 OZ  N", "target": "Laundry Detergent", "category": "household", "brand": "ARM & HAMMER", "size": "92OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000189", "input": "TRSH BAGS", "target": "Trash Bags", "category": "household", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000190", "input": "STARBUCKS COFFEE BEANS", "target": "Coffee Beans", "category": "beverages", "brand": "STARBUCKS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000191", "input": "#VALU HARN DELI SLCDLB", "target": "Sliced Ham", "category": "meat", "brand": "VALU", "size": "LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000192", "input": "HILLSHIRE FARM SLCD HAM 9 OZ X", "target": "Sliced Ham", "category": "meat", "brand": "HILLSHIRE FARM", "size": "9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000193", "input": "41815 MAHATMA RICE ENRICHED", "target": "White Rice", "category": "pantry", "brand": "MAHATMA", "size": "1KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000194", "input": "UNCLE BENS 2LB JSMN RICE", "target": "White Rice", "category": "pantry", "brand": "UNCLE BENS", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000195", "input": "TOMS   WHITEING   TOOTHPASTE", "target": "Toothpaste", "category": "personal care", "brand": "TOMS", "size": "6OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000196", "input": "#THICK CUT BACON OSCAR MAYER 12OZ B", "target": "Bacon", "category": "meat", "brand": "OSCAR MAYER", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000197", "input": "BOBS RED  MILL R0LLED OAT", "target": "Oatmeal", "category": "pantry", "brand": "BOBS RED MILL", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000198", "input": "GALA APPLE KG NF", "target": "Apples", "category": "produce", "brand": null, "size": "KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000199", "input": "HASS AVO X", "target": "Avocados", "category": "produce", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000200", "input": "SUAVE   DNDRFF   SHARNP   23   Z   E4", "target": "Shampoo", "category": "personal care", "brand": "SUAVE", "size": "28OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000201", "input": "27064 GALAXY CHOCLT MK BAR", "target": "Milk Chocolate", "category": "confectionery", "brand": "GALAXY", "size": "1.55OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000202", "input": "TRADITIONAL PASTA SAUCE", "target": "Pasta Sauce", "category": "pantry", "brand": "PREGO", "size": "24OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000203", "input": "T TRSH BG 80CT B", "target": "Trash Bags", "category": "household", "brand": null, "size": "80CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000204", "input": "#BABY SPNCH 16OZ TF", "target": "Spinach", "category": "produce", "brand": null, "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000205", "input": "ORG BLUEBERRY 6OZ", "target": "Blueberries", "category": "produce", "brand": null, "size": "6OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000206", "input": "T KITCHEN TRASH BAGS 1", "target": "Trash Bags", "category": "household", "brand": null, "size": "13GAL", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000207", "input": "#BONNE MAMAN 18Z RASPB PRSRVS", "target": "Jam", "category": "pantry", "brand": "BONNE MAMAN", "size": "18OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000208", "input": "ORG POST CRL 18OZ", "target": "Breakfast Cereal", "category": "pantry", "brand": "POST", "size": "18OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000209", "input": "C&H 4LB POWDERED SUGAR", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": "4LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000210", "input": "47667 F ORG POWDE SUGAR", "target": "Sugar", "category": "pantry", "brand": "GV", "size": "4LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000211", "input": "BONNE MAMAN STRAWBERRY  JAM", "target": "Jam", "category": "pantry", "brand": "BONNE MAMAN", "size": "340G", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000212", "input": "EXTRA PEPPERMINT GUM", "target": "Chewing Gum", "category": "confectionery", "brand": "EXTRA", "size": "14CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000213", "input": "#ARM & HAMMER CLUMPING CAT LITTER 20 LB", "target": "Cat Litter", "category": "pet", "brand": "ARM & HAMMER", "size": "20LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000214", "input": "365  SPNCH  LEA  5OZ  EA", "target": "Spinach", "category": "produce", "brand": "365", "size": "5OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000215", "input": "24641 T LENDERS EVERYTHING BAGELS", "target": "Bagels", "category": "bakery", "brand": "LENDERS", "size": "6CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000216", "input": "39703 T CHICKEN OF THE SEA TUNA", "target": "Canned Tuna", "category": "seafood", "brand": "CHICKEN OF THE SEA", "size": "5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000217", "input": "#FIJI SPRG WATER 1.5 L X", "target": "Bottled Water", "category": "beverages", "brand": "FIJI", "size": "1.5L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000218", "input": "27572 F SPRITE LEM LIME 2L X", "target": "Lemon Lime Soda", "category": "beverages", "brand": "SPRITE", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000219", "input": "KEUKIG CAPSULES ESPRE", "target": "Coffee Pods", "category": "beverages", "brand": "KEURIG", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000220", "input": "COCA-COLA PPS ZERO SUG", "target": "Diet Cola", "category": "beverages", "brand": "COCA-COLA", "size": "12PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000221", "input": "F KRAFT SHAVED PARMESAN", "target": "Parmesan Cheese", "category": "dairy", "brand": "KRAFT", "size": "200G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000222", "input": "#ORG VIYA 6RL PPR TWLL", "target": "Paper Towels", "category": "household", "brand": "VIVA", "size": "6RL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000223", "input": "TWININGS CHAMOMILE TEA 40CT", "target": "Tea Bags", "category": "beverages", "brand": "TWININGS", "size": "40CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000224", "input": "PHILADELPHIA CREAM CHEESE SPREA", "target": "Cream Cheese", "category": "dairy", "brand": "PHILADELPHIA", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000225", "input": "CRISCO 48OZ CNL 0IL", "target": "Vegetable Oil", "category": "pantry", "brand": "CRISCO", "size": "48OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000226", "input": "TIDE LNDRY DETERGENT", "target": "Laundry Detergent", "category": "household", "brand": "TIDE", "size": "150OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000227", "input": "84700 F SIMPLY 89OZ PURE PRM OR JC", "target": "Orange Juice", "category": "beverages", "brand": "SIMPLY", "size": "89OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000228", "input": "* WHEAT BREAD NATURES OW", "target": "Wheat Bread", "category": "bakery", "brand": "NATURES OWN", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000229", "input": "ORGANIC VALLEY MK WH 1GA", "target": "Whole Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": "1GAL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000230", "input": "#ORG 4(T AVOC BAG", "target": "Avocados", "category": "produce", "brand": null, "size": "4CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000231", "input": "FERRERO CHOC TRFL 5.1OZ", "target": "Chocolate Truffles", "category": "confectionery", "brand": "FERRERO", "size": "5.1OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000232", "input": "#TRIDENT SUGR FREE GUM", "target": "Chewing Gum", "category": "confectionery", "brand": "TRIDENT", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000233", "input": "VIVA PAP3R TWL DOUB ROLLS", "target": "Paper Towels", "category": "household", "brand": "VIVA", "size": "6RL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000234", "input": "PKE`GO TRAD  PST AUC 24OZ", "target": "Pasta Sauce", "category": "pantry", "brand": "PREGO", "size": "24OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000235", "input": "55324 STRAWB DRISCOLLS 16OZ", "target": "Strawberries", "category": "produce", "brand": "DRISCOLLS", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000236", "input": "TIDY 20LB CLMP CAT LITTER", "target": "Cat Litter", "category": "pet", "brand": "TIDY CATS", "size": "20LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000237", "input": "F  HAVY  CREAM  HORI", "target": "Heavy Cream", "category": "dairy", "brand": "HORIZON", "size": "32OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000238", "input": "T VF FR RNG EGGS 6CT", "target": "Eggs", "category": "dairy", "brand": "VITAL FARMS", "size": "6CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000239", "input": "65476   FRE   FRI   MCC   X", "target": "French Fries", "category": "frozen", "brand": "MCCAIN", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000240", "input": "55280 T LIN CHOCLT MK BAR N", "target": "Milk Chocolate", "category": "confectionery", "brand": "LINDT", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000241", "input": "MRLT JOS 750ML F", "target": "Red Wine", "category": "alcohol", "brand": "JOSH CELLARS", "size": "750ML", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000242", "input": "T DUNKIN COFF BEANS", "target": "Coffee Beans", "category": "beverages", "brand": "DUNKIN", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000243", "input": "68672 IRSH BTR 250", "target": "Butter", "category": "dairy", "brand": null, "size": "250G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000244", "input": "GUMMY CANDY TROLLI 200", "target": "Gummy Candy", "category": "confectionery", "brand": "TROLLI", "size": "200G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000245", "input": "5OLID WhITE ALBA TNA STA 5 OZ NF", "target": "Canned Tuna", "category": "seafood", "brand": "STARKIST", "size": "5OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000246", "input": "GARBAG  BAGS  D RAW  HEFTY  N", "target": "Trash Bags", "category": "household", "brand": "HEFTY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000247", "input": "T TYLENOL EXTRA STRENGTH TABLETS", "target": "Pain Reliever", "category": "pharmacy", "brand": "TYLENOL", "size": "200MG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000248", "input": "BH BLK FRST HAM 16OZ", "target": "Sliced Ham", "category": "meat", "brand": "BOARS HEAD", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000249", "input": "SPRITE 2L LEMON LIME SODA", "target": "Lemon Lime Soda", "category": "beverages", "brand": "SPRITE", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000250", "input": "#GLAD GRBG BGS DRA 1", "target": "Trash Bags", "category": "household", "brand": "GLAD", "size": "13GAL", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000251", "input": "365   IBUPROFE N   24CT   NE", "target": "Pain Reliever", "category": "pharmacy", "brand": "365", "size": "24CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000252", "input": "THOMAS 6CT PLN BAGEL NF", "target": "Bagels", "category": "bakery", "brand": "THOMAS", "size": "6CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000253", "input": "#PLUGRA 8OZ UNSALTED BUT", "target": "Butter", "category": "dairy", "brand": "PLUGRA", "size": "8OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000254", "input": "DE CECCO SPAGHETTI PASTA NF", "target": "Spaghetti", "category": "pantry", "brand": "DE CECCO", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000255", "input": "44790 SB COOKED SHRIMP 2LB N", "target": "Shrimp", "category": "seafood", "brand": "SB", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000256", "input": "T WOND BRD WHITE 800G", "target": "White Bread", "category": "bakery", "brand": "WONDER", "size": "800G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000257", "input": "46228 JOSH CELLARS RED WINE", "target": "Red Wine", "category": "alcohol", "brand": "JOSH CELLARS", "size": "750ML", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000258", "input": "11749 N 365 12OZ SHKIMP PEELED DEVEINED", "target": "Shrimp", "category": "seafood", "brand": "365", "size": "12OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000259", "input": "* LEM BAG E4 X", "target": "Lemons", "category": "produce", "brand": null, "size": "EA", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000260", "input": "KS  KITCHEN  TRAS  BAGS  8", "target": "Trash Bags", "category": "household", "brand": "KS", "size": "80CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000261", "input": "PL RIB STK X", "target": "Steak", "category": "meat", "brand": "PL", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000262", "input": "TIDY CATS CAT LITTER FT", "target": "Cat Litter", "category": "pet", "brand": "TIDY CATS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000263", "input": "ORG NEW YORK STKP STK", "target": "Steak", "category": "meat", "brand": null, "size": "KG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000264", "input": "T FRESH MART PENNE 500G", "target": "Penne Pasta", "category": "pantry", "brand": "FRESH MART", "size": "500G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000265", "input": "F MINUTE MAID ORNG JUIC NO PULP", "target": "Orange Juice", "category": "beverages", "brand": "MINUTE MAID", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000266", "input": "T IDZD SALT DC 26 OZ", "target": "Salt", "category": "pantry", "brand": "DIAMOND CRYSTAL", "size": "26OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000267", "input": "F RC 2L PEPSI COLA NF", "target": "Cola", "category": "beverages", "brand": "RC", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000268", "input": "SIG CREAM CHEESE BRICK 227G", "target": "Cream Cheese", "category": "dairy", "brand": "SIG", "size": "227G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000269", "input": "F BOTHOUSE CARROTS", "target": "Carrots", "category": "produce", "brand": "BOLTHOUSE", "size": "2LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000270", "input": "#MISSION TORTILLAS FLOUR SOFT TACO", "target": "Tortillas", "category": "bakery", "brand": "MISSION", "size": "10CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000271", "input": "1LB SHREDDED CRRTS F", "target": "Carrots", "category": "produce", "brand": null, "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000272", "input": "EPSS| COLA COCA-COLA 6:PK T", "target": "Cola", "category": "beverages", "brand": "COCA-COLA", "size": "6PK", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000273", "input": "68032 LMN 2 LB BAG N", "target": "Lemons", "category": "produce", "brand": null, "size": "2LB BAG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000274", "input": "LENDERS 6 CT BAGEL", "target": "Bagels", "category": "bakery", "brand": "LENDERS", "size": "6CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000275", "input": "TOBLERONE 200GR MILK CHOC BAR", "target": "Milk Chocolate", "category": "confectionery", "brand": "TOBLERONE", "size": "200G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000276", "input": "T MILKA MLK CHOCOLATE", "target": "Milk Chocolate", "category": "confectionery", "brand": "MILKA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000277", "input": "ORG DRISCOLLS 6OZ BLUEBEKRIES PINT", "target": "Blueberries", "category": "produce", "brand": "DRISCOLLS", "size": "6OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000278", "input": "HILLSHIRE SMK SAUSAGE 19", "target": "Sausages", "category": "meat", "brand": "HILLSHIRE FARM", "size": "19OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000279", "input": "T TIDE LAUNDRY DETERGENT", "target": "Laundry Detergent", "category": "household", "brand": "TIDE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000280", "input": "CABOT MILD CHEDDAR CHEE$E 20", "target": "Cheddar Cheese", "category": "dairy", "brand": "CABOT", "size": "200G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000281", "input": "N  PLANET  OAT  OAT  MILK   1L", "target": "Oat Milk", "category": "dairy", "brand": "PLANET OAT", "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000282", "input": "GG HEAVY WHIP CRM 32OZ", "target": "Heavy Cream", "category": "dairy", "brand": "GG", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000283", "input": "#LAYS KET7LE CHIPS 150 G", "target": "Potato Chips", "category": "snacks", "brand": "LAYS", "size": "150G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000284", "input": "H&S 12OZ. SHMP", "target": "Shampoo", "category": "personal care", "brand": "HEAD & SHOULDERS", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000285", "input": "AQUAFINA   SPR   WTR   1", "target": "Bottled Water", "category": "beverages", "brand": "AQUAFINA", "size": "16.9OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000286", "input": "CRMY CHEESE BRI MM", "target": "Cream Cheese", "category": "dairy", "brand": "MM", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000287", "input": "*  CHOBANI RLAIN GREEK  YGT", "target": "Greek Yogurt", "category": "dairy", "brand": "CHOBANI", "size": "500G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000288", "input": "T COLAVITA OLIVE OIL EXTRA VIPGIN 500 ML", "target": "Olive Oil", "category": "pantry", "brand": "COLAVITA", "size": "500ML", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000289", "input": "* SAUS CT NF", "target": "Sausages", "category": "meat", "brand": null, "size": "5CT", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000290", "input": "#COCA-COLA COKE ZERO", "target": "Diet Cola", "category": "beverages", "brand": "COCA-COLA", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000291", "input": "#MM FAT FREE MLK F", "target": "Skim Milk", "category": "dairy", "brand": "MM", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000292", "input": "PL OL VEGE PURE T", "target": "Vegetable Oil", "category": "pantry", "brand": "PL", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000293", "input": "2% MILK ORGANIC VALL", "target": "Low Fat Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": "1/2GAL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000294", "input": "PILLSBURY PLAIN FLOUR EA", "target": "All Purpose Flour", "category": "pantry", "brand": "PILLSBURY", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000295", "input": "FAIRLIFE WHL MILK HOMOG EA", "target": "Whole Milk", "category": "dairy", "brand": "FAIRLIFE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000296", "input": "F JOSH CELLARS RED WINE", "target": "Red Wine", "category": "alcohol", "brand": "JOSH CELLARS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000297", "input": "THCK   CUT   BCN   WRIGHT   T", "target": "Bacon", "category": "meat", "brand": "WRIGHT", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000298", "input": "T PREGO PASTA SAUC", "target": "Pasta Sauce", "category": "pantry", "brand": "PREGO", "size": "24OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000299", "input": "#PLANTERS TRLMIX", "target": "Mixed Nuts", "category": "snacks", "brand": "PLANTERS", "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000300", "input": "* APPLE GAL4 3LB BAG", "target": "Apples", "category": "produce", "brand": null, "size": "3LB BAG", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000301", "input": "ORG MM LTCE ROMAINE HRTS", "target": "Lettuce", "category": "produce", "brand": "MM", "size": "HEAD", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000302", "input": "F HEINZ KTCHP 32OZ", "target": "Ketchup", "category": "pantry", "brand": "HEINZ", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000303", "input": "N PLUGRA SLTD BTTR", "target": "Butter", "category": "dairy", "brand": "PLUGRA", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000304", "input": "365 ONION YEL LB F", "target": "Onions", "category": "produce", "brand": "365", "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000305", "input": "T BROWN SUGAR 2LB X", "target": "Sugar", "category": "pantry", "brand": null, "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000306", "input": "BELGIOIOSO PARMIGIANO REGGIANO 5OZ EA", "target": "Parmesan Cheese", "category": "dairy", "brand": "BELGIOIOSO", "size": "5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000307", "input": "LINDT WHITE CHOCOLATE 100GM", "target": "White Chocolate", "category": "confectionery", "brand": "LINDT", "size": "100G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000308", "input": "N FAIRLIFE FAT FREE MLK", "target": "Skim Milk", "category": "dairy", "brand": "FAIRLIFE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000309", "input": "MAYONN DUKES 400 ML F", "target": "Mayonnaise", "category": "pantry", "brand": "DUKES", "size": "400ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000310", "input": "DUKES LIGHT MAY", "target": "Mayonnaise", "category": "pantry", "brand": "DUKES", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000311", "input": "F FAGE PLA GRK YGRT", "target": "Greek Yogurt", "category": "dairy", "brand": "FAGE", "size": "500G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000312", "input": "N H3AVY DUTY FOIL", "target": "Aluminum Foil", "category": "household", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000313", "input": "N FLOUR ALL PURPOSE", "target": "All Purpose Flour", "category": "pantry", "brand": "KING ARTHUR", "size": "5LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000314", "input": "PEDIGREE ADULT DOG FOOD CHKN 15", "target": "Dog Food", "category": "pet", "brand": "PEDIGREE", "size": "15LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000315", "input": "**  BcN  OM", "target": "Bacon", "category": "meat", "brand": "OSCAR MAYER", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000316", "input": "ORVILLE POPCOR 4.4OZ", "target": "Popcorn", "category": "snacks", "brand": "ORVILLE", "size": "4.4OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000317", "input": "* MISSION TORTILLAS FLOUR SOFT TACO", "target": "Tortillas", "category": "bakery", "brand": "MISSION", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000318", "input": "N HORIZON 32Z HVY WHPG CRM", "target": "Heavy Cream", "category": "dairy", "brand": "HORIZON", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000319", "input": "HORIZON VITAMIN D MK 2 L", "target": "Whole Milk", "category": "dairy", "brand": "HORIZON", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000320", "input": "DOLE BANANAS YELLOW", "target": "Bananas", "category": "produce", "brand": "DOLE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000321", "input": "KS COOK SHRMP 1 LB FT", "target": "Shrimp", "category": "seafood", "brand": "KS", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000322", "input": "MOT APPLE JUICE UNSWEETENED", "target": "Apple Juice", "category": "beverages", "brand": "MOTTS", "size": "64OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000323", "input": "69934 N REYNOLDS FOIL WRAP", "target": "Aluminum Foil", "category": "household", "brand": "REYNOLDS", "size": "200SQFT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000324", "input": "BEEF MINCE", "target": "Ground Beef", "category": "meat", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000325", "input": "STRAWB 1LB", "target": "Strawberries", "category": "produce", "brand": null, "size": "1LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000326", "input": "ORG TWININGS BLACK TEA", "target": "Tea Bags", "category": "beverages", "brand": "TWININGS", "size": "40CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000327", "input": "T KRaFT PAPRNI RGGN 8OZ TF", "target": "Parmesan Cheese", "category": "dairy", "brand": "KRAFT", "size": "8OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000328", "input": "#ORG HORIZON WHIP CRMY", "target": "Heavy Cream", "category": "dairy", "brand": "HORIZON", "size": "1PT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000329", "input": "KEURIG CAPSULES ESPRSS", "target": "Coffee Pods", "category": "beverages", "brand": "KEURIG", "size": "24CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000330", "input": "RI7Z CHEESE CRACKERS", "target": "Crackers", "category": "snacks", "brand": "RITZ", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000331", "input": "BEN & JERR 1PT CHOC ICE CRRN", "target": "Ice Cream", "category": "frozen", "brand": "BEN & JERRYS", "size": "1PT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000332", "input": "F SMUCKERSCREAMY PEANUT BUTTER", "target": "Peanut Butter", "category": "pantry", "brand": "SMUCKERS", "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000333", "input": "PERDUE BNLS SKNLS CHICKEN BRST", "target": "Chicken Breast", "category": "meat", "brand": "PERDUE", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000334", "input": "SB SWEET CRMY BUTTR 8 OZ", "target": "Butter", "category": "dairy", "brand": "SB", "size": "8OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000335", "input": "DRISCOLLS STRAWBERRY 16 OZ N", "target": "Strawberries", "category": "produce", "brand": "DRISCOLLS", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000336", "input": "KKAFT   16OZ   MDZRLA   CHSE", "target": "Mozzarella Cheese", "category": "dairy", "brand": "KRAFT", "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000337", "input": "T TOMATO ON THE V1NE L", "target": "Tomatoes", "category": "produce", "brand": null, "size": "LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000338", "input": "KRO CHICKEN BREAST KG T", "target": "Chicken Breast", "category": "meat", "brand": "KRO", "size": "KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000339", "input": "69536 KRAFT PRMGN REG 5 OZ", "target": "Parmesan Cheese", "category": "dairy", "brand": "KRAFT", "size": "5OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000340", "input": "FRISKIES DRY CAT FOOD 24CT", "target": "Cat Food", "category": "pet", "brand": "FRISKIES", "size": "24CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000341", "input": "32734   KEURIG   BEAKFAST   BLEN D  K  CUPS    24CT", "target": "Coffee Pods", "category": "beverages", "brand": "KEURIG", "size": "24CT", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000342", "input": "T ALMOND BREEZE ALMONDMILKUNSWEETENED", "target": "Almond Milk", "category": "dairy", "brand": "ALMOND BREEZE", "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000343", "input": "11826 #HAM DELI SLCD 16O", "target": "Sliced Ham", "category": "meat", "brand": null, "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000344", "input": "#PEETS MED ROAST CFE 250", "target": "Coffee Beans", "category": "beverages", "brand": "PEETS", "size": "250G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000345", "input": "OREO COOKIES 14OZ TF", "target": "Cookies", "category": "snacks", "brand": "OREO", "size": "14OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000346", "input": "ORG SILK ALMOND MILK 1L", "target": "Almond Milk", "category": "dairy", "brand": "SILK", "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000347", "input": "DORITOS NACHO CHEESE TORTILLA CHIPS", "target": "Tortilla Chips", "category": "snacks", "brand": "DORITOS", "size": "11OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000348", "input": "ITALIAN SAUSAGE JOHNSO", "target": "Sausages", "category": "meat", "brand": "JOHNSONVILLE", "size": "5CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000349", "input": "PALMOLIVE DISH LIQUID LEMON", "target": "Dish Soap", "category": "household", "brand": "PALMOLIVE", "size": "28OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000350", "input": "OATLY O AT MILK 64OZ", "target": "Oat Milk", "category": "dairy", "brand": "OATLY", "size": "64OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000351", "input": "N  KRAFT  SHAVED  PARMESAN", "target": "Parmesan Cheese", "category": "dairy", "brand": "KRAFT", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000352", "input": "VALU YOGURT NF", "target": "Yogurt", "category": "dairy", "brand": "VALU", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000353", "input": "1427 N R KS 5 LLB ED ROT", "target": "Potatoes", "category": "produce", "brand": "KS", "size": "5LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000354", "input": "HORIZON WHL MILK", "target": "Whole Milk", "category": "dairy", "brand": "HORIZON", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000355", "input": "ORG SILK ALMOND BEVG", "target": "Almond Milk", "category": "dairy", "brand": "SILK", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000356", "input": "RONZONI SPAGH PSTA X", "target": "Spaghetti", "category": "pantry", "brand": "RONZONI", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000357", "input": "90035 N SMUCKERS STRAWB JAM", "target": "Jam", "category": "pantry", "brand": "SMUCKERS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000358", "input": "N   D4ISY   LIGHT   SOUR   CREAM   TF", "target": "Sour Cream", "category": "dairy", "brand": "DAISY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000359", "input": "ORG DNNN YGT 8PK F", "target": "Yogurt", "category": "dairy", "brand": "DANNON", "size": "8PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000360", "input": "#ROM   LETT   EA", "target": "Lettuce", "category": "produce", "brand": null, "size": "EA", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000361", "input": "N  KRO  AVOCA0OS  LARGE  B", "target": "Avocados", "category": "produce", "brand": "KRO", "size": "BAG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000362", "input": "N SHARP CHDR 16OZ", "target": "Cheddar Cheese", "category": "dairy", "brand": null, "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000363", "input": "C&H BRWN SUGR", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000364", "input": "ROCKSTAR ENGY DRNK QRIGINAL", "target": "Energy Drink", "category": "beverages", "brand": "ROCKSTAR", "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000365", "input": "* SUGR C&H", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000366", "input": "CENTRUM 90CT VITAMIN C", "target": "Vitamins", "category": "pharmacy", "brand": "CENTRUM", "size": "90CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000367", "input": "N FRlSKIES WET CAT FOODD PATE", "target": "Cat Food", "category": "pet", "brand": "FRISKIES", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000368", "input": "FF REDUCED FAT MILK ORGANIC V", "target": "Low Fat Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": "1/2GAL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000369", "input": "T CLIF CHEWY GRANOLA BARS 12CT FT", "target": "Granola Bars", "category": "snacks", "brand": "CLIF", "size": "12CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000370", "input": "LAND O LAKES SALTED BUTTER", "target": "Butter", "category": "dairy", "brand": "LAND O LAKES", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000371", "input": "22878 FRESH STEP CLUMP CAT LITR", "target": "Cat Litter", "category": "pet", "brand": "FRESH STEP", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000372", "input": "39309 HORIZON 1GAL MILK SKIM", "target": "Skim Milk", "category": "dairy", "brand": "HORIZON", "size": "1GAL", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000373", "input": "CHAMO TEA TAZO 100CT NF", "target": "Tea Bags", "category": "beverages", "brand": "TAZO", "size": "100CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000374", "input": "HORIZON NONFAT MILK", "target": "Skim Milk", "category": "dairy", "brand": "HORIZON", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000375", "input": "KC WH WINE 1.5L", "target": "White Wine", "category": "alcohol", "brand": "KIM CRAWFORD", "size": "1.5L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000376", "input": "25293 #BOLTHOUSE BABY CARROTS", "target": "Carrots", "category": "produce", "brand": "BOLTHOUSE", "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000377", "input": "* FERRERO LNDR TRFL 12CT", "target": "Chocolate Truffles", "category": "confectionery", "brand": "FERRERO", "size": "12CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000378", "input": "SPRITE 7UP SODA 12PK N", "target": "Lemon Lime Soda", "category": "beverages", "brand": "SPRITE", "size": "12PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000379", "input": "* GREEN & BL4CKS DARK CHOC 85X COCOA", "target": "Dark Chocolate", "category": "confectionery", "brand": "GREEN & BLACKS", "size": "200G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000380", "input": "POPCORN 4.4OZ X", "target": "Popcorn", "category": "snacks", "brand": null, "size": "4.4OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000381", "input": "DRTS  TOR  CHPS  FT", "target": "Tortilla Chips", "category": "snacks", "brand": "DORITOS", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000382", "input": "T KEURIG 12CT K-CUP PODS", "target": "Coffee Pods", "category": "beverages", "brand": "KEURIG", "size": "12CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000383", "input": "* SKIM MLK 1 GAL", "target": "Skim Milk", "category": "dairy", "brand": null, "size": "1GAL", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000384", "input": "POPCORN T", "target": "Popcorn", "category": "snacks", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000385", "input": "CRISCO VEGET OIL", "target": "Vegetable Oil", "category": "pantry", "brand": "CRISCO", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000386", "input": "78791 APPL RD DLCS 3LB BAG EA", "target": "Apples", "category": "produce", "brand": null, "size": "3LB BAG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000387", "input": "55142 SpARKLE PAPER TOWELDOUBLE RLLS 8R", "target": "Paper Towels", "category": "household", "brand": "SPARKLE", "size": "8RL", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000388", "input": "MICRO PPCRN 3CT", "target": "Popcorn", "category": "snacks", "brand": null, "size": "3CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000389", "input": "#DE SPGHTI N", "target": "Spaghetti", "category": "pantry", "brand": "DE CECCO", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000390", "input": "SIETE  RESTAURANT  STYLE  TORTILLA  CHIPS", "target": "Tortilla Chips", "category": "snacks", "brand": "SIETE", "size": "11OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000391", "input": "MONSTER ENERGY DRINK ORGNL FT", "target": "Energy Drink", "category": "beverages", "brand": "MONSTER", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000392", "input": "MCCORMICK GRD BLKRPR", "target": "Black Pepper", "category": "pantry", "brand": "MCCORMICK", "size": "3OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000393", "input": "50737 #MOTT APPLE JUI UNS", "target": "Apple Juice", "category": "beverages", "brand": "MOTTS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000394", "input": "* C&H BRWN SUGR", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000395", "input": "ORG HONEYCR APPLE LB T", "target": "Apples", "category": "produce", "brand": null, "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000396", "input": "50492 T GALBANI MOZZARELLA CHEESE 16 OZ", "target": "Mozzarella Cheese", "category": "dairy", "brand": "GALBANI", "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000397", "input": "N OAD DLY MULTIVIT TAB", "target": "Vitamins", "category": "pharmacy", "brand": "ONE A DAY", "size": "90CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000398", "input": "N LENDERS PLAI BGLS 6CT N", "target": "Bagels", "category": "bakery", "brand": "LENDERS", "size": "6CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000399", "input": "GROUND BEEF 2LB FT", "target": "Ground Beef", "category": "meat", "brand": null, "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000400", "input": "CRISCO OIL VEGTBL PURE", "target": "Vegetable Oil", "category": "pantry", "brand": "CRISCO", "size": "48OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000401", "input": "T SECRET INVIS SOLID AP", "target": "Deodorant", "category": "personal care", "brand": "SECRET", "size": "2PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000402", "input": "LINDT CHCLT TRFFLS 2", "target": "Chocolate Truffles", "category": "confectionery", "brand": "LINDT", "size": "200G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000403", "input": "F SPRITE SIERRA MIST 2PK EA", "target": "Lemon Lime Soda", "category": "beverages", "brand": "SIERRA MIST", "size": "12PK", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000404", "input": "FRZN CORN", "target": "Frozen Vegetables", "category": "frozen", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000405", "input": "F OL VEGTBL PURE 1L", "target": "Vegetable Oil", "category": "pantry", "brand": null, "size": "1L", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000406", "input": "LPTN BLK TEA 20CT", "target": "Tea Bags", "category": "beverages", "brand": "LIPTON", "size": "20CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000407", "input": "ARM & hAMMER E LAUNDPY DETERGENT 42CT E", "target": "Laundry Detergent", "category": "household", "brand": "ARM & HAMMER", "size": "42CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000408", "input": "FRISKIES INDR CAT FOOD", "target": "Cat Food", "category": "pet", "brand": "FRISKIES", "size": "3OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000409", "input": "TJ   EVOO   16.9OZ   T", "target": "Olive Oil", "category": "pantry", "brand": "TJ", "size": "16.9OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000410", "input": "ORG GROUND BEEF PL", "target": "Ground Beef", "category": "meat", "brand": "PL", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000411", "input": "NEW  YORK  STRRIP  STEAK", "target": "Steak", "category": "meat", "brand": null, "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000412", "input": "F ACTIVIA LOW FAT YOGURT EA", "target": "Yogurt", "category": "dairy", "brand": "ACTIVIA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000413", "input": "T 16OZ LGT SOUR CRM", "target": "Sour Cream", "category": "dairy", "brand": null, "size": "16OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000414", "input": "F WRIGHT BCN N", "target": "Bacon", "category": "meat", "brand": "WRIGHT", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000415", "input": "MAXWELL HOUSE G'MD CQFFEE", "target": "Ground Coffee", "category": "beverages", "brand": "MAXWELL HOUSE", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000416", "input": "* LENDERS BGLS T", "target": "Bagels", "category": "bakery", "brand": "LENDERS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000417", "input": "GOLDFISH WHOL GRA CRCKR", "target": "Crackers", "category": "snacks", "brand": "GOLDFISH", "size": "200G", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000418", "input": "F DE CECCD PNN 500G", "target": "Penne Pasta", "category": "pantry", "brand": "DE CECCO", "size": "500G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000419", "input": "LINDT   DARK   CHOCOLATE   85%   COCOA", "target": "Dark Chocolate", "category": "confectionery", "brand": "LINDT", "size": "4.4OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000420", "input": "TOPO CHICO SELT 8PK", "target": "Sparkling Water", "category": "beverages", "brand": "TOPO CHICO", "size": "8PK", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000421", "input": "#HASS AVOC T", "target": "Avocados", "category": "produce", "brand": null, "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000422", "input": "83227 GV KETCH SQUEEZ", "target": "Ketchup", "category": "pantry", "brand": "GV", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000423", "input": "0RG HARIbO 5OZ GUMMY CNDY", "target": "Gummy Candy", "category": "confectionery", "brand": "HARIBO", "size": "5OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000424", "input": "SOUR CREAM 8 OZ F", "target": "Sour Cream", "category": "dairy", "brand": null, "size": "8OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000425", "input": "N ORGNL YOG 6 OZ F", "target": "Yogurt", "category": "dairy", "brand": null, "size": "6OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000426", "input": "CAPE COD SOUR CREAM  ONION C#IPS", "target": "Potato Chips", "category": "snacks", "brand": "CAPE COD", "size": "150G", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000427", "input": "BERTOLLI EVOO 16.9OZ", "target": "Olive Oil", "category": "pantry", "brand": "BERTOLLI", "size": "16.9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000428", "input": "45908 DOLE BAN EA", "target": "Bananas", "category": "produce", "brand": "DOLE", "size": "EA", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000429", "input": "GV   HEW   YOORK   STRP   STK   TF", "target": "Steak", "category": "meat", "brand": "GV", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000430", "input": "SPAGHETTI F", "target": "Spaghetti", "category": "pantry", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000431", "input": "3501 OIKOS TOTAL 0% GREEK YOGURT", "target": "Greek Yogurt", "category": "dairy", "brand": "OIKOS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000432", "input": "N PERSIL LNDRY DTRGNT", "target": "Laundry Detergent", "category": "household", "brand": "PERSIL", "size": "150OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000433", "input": "ORBIT PPRMNT GUM 14CT", "target": "Chewing Gum", "category": "confectionery", "brand": "ORBIT", "size": "14CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000434", "input": "F FRENCHS SPIC BRN MUST 14Z", "target": "Mustard", "category": "pantry", "brand": "FRENCHS", "size": "14OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000435", "input": "KENDALL JACKSON SAUVIGNON BLANC", "target": "White Wine", "category": "alcohol", "brand": "KENDALL JACKSON", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000436", "input": "F 2LB BNLS CHICKEN THGH", "target": "Chicken Thighs", "category": "meat", "brand": null, "size": "2LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000437", "input": "N PERRIER SPARKLING MINERAL WATR", "target": "Sparkling Water", "category": "beverages", "brand": "PERRIER", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000438", "input": "* SHRP 365 1LB T", "target": "Shrimp", "category": "seafood", "brand": "365", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000439", "input": "N CREST CAVITY PROTECTION TOOTHPASTE", "target": "Toothpaste", "category": "personal care", "brand": "CREST", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000440", "input": "HARVEST AVOCA BAG 4CT", "target": "Avocados", "category": "produce", "brand": "HARVEST", "size": "4CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000441", "input": "#4QUAFINA PURIFIED WATER 1.5L NF", "target": "Bottled Water", "category": "beverages", "brand": "AQUAFINA", "size": "1.5L", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000442", "input": "FR MOZZRLA 8 OZ.", "target": "Mozzarella Cheese", "category": "dairy", "brand": null, "size": "8OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000443", "input": "CRESTWHTNG TTHP ST 100 ML", "target": "Toothpaste", "category": "personal care", "brand": "CREST", "size": "100ML", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000444", "input": "TIDY   CLRNP   CAT   LITTE   TF", "target": "Cat Litter", "category": "pet", "brand": "TIDY CATS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000445", "input": "GM CORN FLKS EA", "target": "Breakfast Cereal", "category": "pantry", "brand": "GENERAL MILLS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000446", "input": "#PETE AND GER BRWN EGGS", "target": "Eggs", "category": "dairy", "brand": "PETE AND GERRYS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000447", "input": "KS IRI BTR 1LB", "target": "Butter", "category": "dairy", "brand": "KS", "size": "1LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000448", "input": "F  TYSON  CHICKEN  THGH  2LB  FT", "target": "Chicken Thighs", "category": "meat", "brand": "TYSON", "size": "2LB", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000449", "input": "ORG SIG 12O Z HONE Y", "target": "Honey", "category": "pantry", "brand": "SIG", "size": "12OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000450", "input": "F GPEEN & BLACKS DARK CHO", "target": "Dark Chocolate", "category": "confectionery", "brand": "GREEN & BLACKS", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000451", "input": "F SRR MIST 7UP SDA", "target": "Lemon Lime Soda", "category": "beverages", "brand": "SIERRA MIST", "size": "2L", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000452", "input": "HERSHEYS 1.55Z MILK COCOLATE HF", "target": "Milk Chocolate", "category": "confectionery", "brand": "HERSHEYS", "size": "1.55OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000453", "input": "#M M CREAMY PEANUT BUTTER", "target": "Peanut Butter", "category": "pantry", "brand": "MM", "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000454", "input": "GV EA ICBRG LTCE B", "target": "Lettuce", "category": "produce", "brand": "GV", "size": "EA", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000455", "input": "#BOARS HEAD HAM DELI SLICED 16 OZ", "target": "Sliced Ham", "category": "meat", "brand": "BOARS HEAD", "size": "16OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000456", "input": "55094 T COCA-COLA COLA", "target": "Cola", "category": "beverages", "brand": "COCA-COLA", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000457", "input": "* LONG GRAI WH RICE 5LB F", "target": "White Rice", "category": "pantry", "brand": null, "size": "5LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000458", "input": "ORG MINUTE PURE PREM ORANGE JCE", "target": "Orange Juice", "category": "beverages", "brand": "MINUTE MAID", "size": "89OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000459", "input": "#NEW YYORK STRIPSTK LB", "target": "Steak", "category": "meat", "brand": null, "size": "LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000460", "input": "* FZN PEAS BE 12OZ T", "target": "Frozen Vegetables", "category": "frozen", "brand": "BIRDS EYE", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000461", "input": "OATL OAT MILK", "target": "Oat Milk", "category": "dairy", "brand": "OATLY", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000462", "input": "IRIS SPRNG MSTRZNG BODY WSH", "target": "Body Wash", "category": "personal care", "brand": "IRISH SPRING", "size": "500ML", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000463", "input": "T COLGATE CVTY PROTECTION TP", "target": "Toothpaste", "category": "personal care", "brand": "COLGATE", "size": "4OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000464", "input": "1957 T MCCORMICK BLACK PEPPER", "target": "Black Pepper", "category": "pantry", "brand": "MCCORMICK", "size": "3OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000465", "input": "F LAND O LAKES 4 STICKS BUTTER", "target": "Butter", "category": "dairy", "brand": "LAND O LAKES", "size": "4 STICKS", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000466", "input": "21854 LAND O LAKES VIT D MILK", "target": "Whole Milk", "category": "dairy", "brand": "LAND O LAKES", "size": "2L", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000467", "input": "#SIETE   NACH   CHS   TORTLA   CHIP   X", "target": "Tortilla Chips", "category": "snacks", "brand": "SIETE", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000468", "input": "T PERDUE CHKN BREAST FLLTS LB", "target": "Chicken Breast", "category": "meat", "brand": "PERDUE", "size": "LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000469", "input": "T DOLE BANANA X", "target": "Bananas", "category": "produce", "brand": "DOLE", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000470", "input": "ADVIL ACETAMINOPHEN F", "target": "Pain Reliever", "category": "pharmacy", "brand": "ADVIL", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000471", "input": "F GRNNY SMTH APPLS", "target": "Apples", "category": "produce", "brand": null, "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000472", "input": "PETE AND GERRYS GRAD A LGE EGGS", "target": "Eggs", "category": "dairy", "brand": "PETE AND GERRYS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000473", "input": "PLAIN GREEK YOGURT FAGE 32OZ", "target": "Greek Yogurt", "category": "dairy", "brand": "FAGE", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000474", "input": "N HILLSHIRE FARM BREK SAUS LNKS", "target": "Sausages", "category": "meat", "brand": "HILLSHIRE FARM", "size": null, "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000475", "input": "9054BIRDS EYE FRZ PEAS", "target": "Frozen Vegetables", "category": "frozen", "brand": "BIRDS EYE", "size": "16OZ", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000476", "input": "F ORGANIC VALLEY LOW FAT MILKK", "target": "Low Fat Milk", "category": "dairy", "brand": "ORGANIC VALLEY", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000477", "input": "PRSL   HE   LNDRY   DET   92OZ", "target": "Laundry Detergent", "category": "household", "brand": "PERSIL", "size": "92OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000478", "input": "F HUNTS 32OZ KETCHUP", "target": "Ketchup", "category": "pantry", "brand": "HUNTS", "size": "32OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000479", "input": "N BOBS RED MILL OLD FASHIONED OATS", "target": "Oatmeal", "category": "pantry", "brand": "BOBS RED MILL", "size": "42OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000480", "input": "F   CHARMIN   TOIL   PAP   FT", "target": "Toilet Paper", "category": "household", "brand": "CHARMIN", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000481", "input": "IODIZE SALT 3LB FT", "target": "Salt", "category": "pantry", "brand": null, "size": "3LB", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000482", "input": "WRIGLEYS  SPEARMINT  GUM  15PC", "target": "Chewing Gum", "category": "confectionery", "brand": "WRIGLEYS", "size": "15PC", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000483", "input": "F CLIF CHE GRANOLA BARS T", "target": "Granola Bars", "category": "snacks", "brand": "CLIF", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000484", "input": "SMARTFOOD  PPCRN   3CT  FT", "target": "Popcorn", "category": "snacks", "brand": "SMARTFOOD", "size": "3CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000485", "input": "NTR NTS HNY 32OZ", "target": "Honey", "category": "pantry", "brand": "NATURE NATE'S", "size": "32OZ", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000486", "input": "N POST FROSTED FLKS 12 OZ NF", "target": "Breakfast Cereal", "category": "pantry", "brand": "POST", "size": "12OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000487", "input": "F OLIV OIL COLA_YTA 1 L X", "target": "Olive Oil", "category": "pantry", "brand": "COLAVITA", "size": "1L", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000488", "input": "N TIDE HE  LAUNDRYY DETERGENT", "target": "Laundry Detergent", "category": "household", "brand": "TIDE", "size": "64LD", "ocr_noise": "medium", "unseen_brand": false}
+{"id": "train-000489", "input": "10737 STARBUCKS MED RST COF", "target": "Coffee Beans", "category": "beverages", "brand": "STARBUCKS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000490", "input": "KETCHUP HARVEST TF", "target": "Ketchup", "category": "pantry", "brand": "HARVEST", "size": null, "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000491", "input": "* CENTKUM VIT D3 90CT", "target": "Vitamins", "category": "pharmacy", "brand": "CENTRUM", "size": "90CT", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000492", "input": "CHERRY TOMATOE5 KG TF", "target": "Tomatoes", "category": "produce", "brand": null, "size": "KG", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000493", "input": "25966 MINI CROISSANTS", "target": "Croissants", "category": "bakery", "brand": null, "size": "4CT", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000494", "input": "T LUNDBERG BRN RCE WHOLE GRN", "target": "Brown Rice", "category": "pantry", "brand": "LUNDBERG", "size": "1KG", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000495", "input": "CARROTS BOLTHOUSE 5 LB", "target": "Carrots", "category": "produce", "brand": "BOLTHOUSE", "size": "5LB", "ocr_noise": "light", "unseen_brand": false}
+{"id": "train-000496", "input": "T CLIF PROTEIN BAR 8.9OZ EA", "target": "Granola Bars", "category": "snacks", "brand": "CLIF", "size": "8.9OZ", "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000497", "input": "* GUERRERO TORTILLAS FLOUR SOFT TACO", "target": "Tortillas", "category": "bakery", "brand": "GUERRERO", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000498", "input": "LENDERS BAGELS", "target": "Bagels", "category": "bakery", "brand": "LENDERS", "size": null, "ocr_noise": "none", "unseen_brand": false}
+{"id": "train-000499", "input": "T   BRWN   SUGR   C&H   2", "target": "Sugar", "category": "pantry", "brand": "C&H", "size": "2LB", "ocr_noise": "light", "unseen_brand": false}
