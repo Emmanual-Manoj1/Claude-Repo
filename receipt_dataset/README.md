@@ -122,10 +122,10 @@ classification over those labels, or as text generation.
 
 ## How the inputs are built
 
-1. **Catalogue:** 111 products across 14 categories. Each has real brands,
+1. **Catalogue:** 111 products across 15 categories. Each has real brands,
    typical sizes, and several ways the name gets printed (`DARK CHOCOLATE`,
    `CHOCOLATE DARK 70%`, `EXCELLENCE DARK CHOCOLATE`, ...).
-2. **Abbreviation:** a curated table of about 250 POS abbreviations
+2. **Abbreviation:** a curated table of about 180 POS words with abbreviations
    (`CHOCOLATE→CHOC/CHC`, `BONELESS→BNLS`), plus automatic vowel-dropping
    (`SPRKLNG`) and truncation (`GRAN`). The strength is random, so some items
    stay fully spelled out.
