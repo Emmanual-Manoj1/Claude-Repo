@@ -85,62 +85,127 @@ down by `noise_level`.
 
 # Item-Name Normalisation Dataset
 
-`generate_items.py` builds a second dataset that maps raw receipt line items
-to **generic product names**:
+`generate_items.py` maps raw receipt line items to **generic product names**:
 
 ```
-LINDT DARK CHOC BR 80 G FT        -> Dark Chocolate
-HERSHEYS CHC DARK 70%             -> Dark Chocolate
-COLAVITA EXTRA VRGN OLIV OIL      -> Olive Oil
-KRG CFE PODS 24CT                 -> Coffee Pods
-N NEW YORK STRP STK KG F          -> Steak
-COCA-COLA DIET COLA               -> Diet Cola
+LINDT DARK CHOC BR 80 G FT                 -> Dark Chocolate
+Pure Premium Orange Juice 52Oz Tf          -> Orange Juice
+T BLUE BUFFALO ADUL DOG FOOD CHKN   2.33 N -> Dog Food
+VALU GROUND  CHUCK 1LB FF  3.29            -> Ground Beef
+ACT MTH RINS 1L                            -> Mouthwash
+RAGU   TRAD|TIONAL  PA5Ta    $AUCE   24.08 -> Pasta Sauce
+Return Sp Bars -1.90                       -> Non-Item
+PAPER BAG   28',10                         -> Non-Item
 ```
 
-The model learns to drop the brand, size, pack count, PLU code and tax flags,
-and to expand POS abbreviations.
+The model learns to drop the brand, size, pack count, PLU code, tax flags and
+price, to expand POS abbreviations, to see through OCR errors, and to
+recognise lines that are not products.
 
 ```bash
-python generate_items.py                        # 20k / 2k / 2k -> data_items/
-python generate_items.py --holdout-brands 0.15  # some brands appear only in val/test
-python generate_items.py --noise none:1         # abbreviations only, no OCR noise
+python generate_items.py                          # 50k / 5k / 5k -> data_items/
+python generate_items.py --train 200000           # more data
+python generate_items.py --holdout-brands 0.15    # some brands only in val/test
+python generate_items.py --holdout-products 0.1   # some products only in val/test
+python generate_items.py --noise none:1           # abbreviations only, no OCR noise
 ```
 
-A committed sample (500 / 100 / 100) is in [`sample_items/`](sample_items/).
+Generating 60k examples takes about 3 seconds. A committed sample
+(1000 / 200 / 200) is in [`sample_items/`](sample_items/).
 
-## Format
+## What's covered
 
-```json
-{"id": "train-000000", "input": "43063 #ORVILLE 4.4OZ WHITE CHDDR POPCORN",
- "target": "Popcorn", "category": "snacks", "brand": "ORVILLE",
- "size": "4.4OZ", "ocr_noise": "none", "unseen_brand": false}
-```
-
-`brand` and `size` are ground truth, so the same data can also train an
-extractor. `labels.txt` lists all 111 target names. You can treat the task as
-classification over those labels, or as text generation.
-
-## How the inputs are built
-
-1. **Catalogue:** 111 products across 15 categories. Each has real brands,
-   typical sizes, and several ways the name gets printed (`DARK CHOCOLATE`,
-   `CHOCOLATE DARK 70%`, `EXCELLENCE DARK CHOCOLATE`, ...).
-2. **Abbreviation:** a curated table of about 180 POS words with abbreviations
-   (`CHOCOLATE→CHOC/CHC`, `BONELESS→BNLS`), plus automatic vowel-dropping
-   (`SPRKLNG`) and truncation (`GRAN`). The strength is random, so some items
-   stay fully spelled out.
-3. **Brand variants:** full name, first word only, or initials (`GREEN & BLACKS → G&B`),
-   plus store-brand codes (`GV`, `KS`, `365`).
-4. **Layout:** brand, name and size in varying order; PLU codes; tax flags
-   (`N`, `F`, `TF`); and truncation to a fixed POS field width. Truncation
-   never cuts into the product name.
-5. **OCR noise (optional):** the same noise model as `generate.py`.
+- **320 products in 20 categories**: grocery, dairy, produce, meat, seafood,
+  bakery, deli, frozen, snacks, beverages, alcohol, household, personal care,
+  baby, pharmacy, pet, floral, automotive and general merchandise. There are
+  about 550 real brands and about 1,200 printed name variants.
+- **About 360 curated POS abbreviations** (`CHOCOLATE→CHOC/CHC`,
+  `BONELESS→BNLS`, `DISHWASHER→DW`), plus automatic vowel-dropping and
+  truncation for everything else.
+- **Brand variants:** full, first word or initials, plus store-brand codes
+  (`GV`, `KS`, `365`).
+- **Layout:** brand, name and size in any order; PLU codes; tax flags;
+  fixed-width truncation (never into the product name); and in 30% of lines,
+  prices, `2 @ 1.99` multi-buys and `1.32 LB @ 0.59/LB` weights.
+- **Casing:** mostly upper case, with some Title Case and lower case lines.
+- **Non-items (6%):** totals, tax, payment, deposits, bag fees, savings,
+  reference numbers. The hard negatives are coupons and returns that *name a
+  product* (`COUPON LINDT CHOC -1.00`). All of these are labelled `Non-Item`.
+- **OCR noise:** the same noise model as `generate.py`, in a
+  `none/light/medium/heavy` mix.
 
 Inputs are de-duplicated across splits, so no test input appears in training.
 
+## Output files
+
+| file | use |
+|---|---|
+| `train/val/test.jsonl` | main format, with all metadata |
+| `train/val/test_chat.jsonl` | `{"messages": [system, user, assistant]}` for LLM fine-tuning |
+| `train/val/test.csv` | spreadsheets, pandas, AutoML tools |
+| `labels.txt` | the 321 target labels (320 products + `Non-Item`) |
+| `stats.json` | per-split counts by category, noise level and held-out slice |
+
+Turn formats off with `--formats jsonl`. A JSONL row:
+
+```json
+{"id": "train-000000", "input": "POWERADE 8 PK THIRST QUENC TF",
+ "target": "Sports Drink", "category": "beverages", "brand": "POWERADE",
+ "size": "8PK", "ocr_noise": "none", "unseen_brand": false, "unseen_product": false}
+```
+
+`brand` and `size` are ground truth, so the same data can also train an
+extractor.
+
+## Picking a model
+
+- **Classifier** (fast and cheap): predict one of the 321 labels. See the
+  baseline below.
+- **Small seq2seq model** (T5 / ByT5 / BART): generates the name, so it can
+  handle products outside the label list. Measure this with
+  `--holdout-products`.
+- **LLM fine-tune:** use the `*_chat.jsonl` files directly.
+
+## Baseline and evaluation
+
+`baseline.py` trains a character n-gram TF-IDF + logistic regression model,
+then reports accuracy by noise level, category and held-out slice:
+
+```bash
+pip install scikit-learn
+python baseline.py --data data_items
+```
+
+On the default dataset with `--holdout-brands 0.1` (50k train / 5k test):
+
+| slice | accuracy |
+|---|---|
+| overall | 98.7% |
+| no OCR noise | 99.9% |
+| light / medium / heavy noise | 98.1% / 96.7% / 91.9% |
+| unseen brands | 94.4% |
+
+The remaining errors are the genuinely hard cases: `POTATO ROLLS → Potatoes`,
+`CANADA DRY GING ALE → Ginger`, `HONEY BBQ SAUCE → Honey`. A good model
+should beat this, especially on heavy noise and unseen brands.
+
+To score your own model, write `{"id": ..., "prediction": ...}` lines for
+`test.jsonl` and run `python baseline.py --data data_items --predictions preds.jsonl`.
+
+> Synthetic accuracy overstates real-world accuracy. Before you trust the
+> number, hand-label 200 or more real receipt lines from your own stores and
+> evaluate on those.
+
 ## Extending
 
-Add rows to `CATALOGUE` in `generate_items.py` (one line per product:
-`target|category|brands|sizes|name variants`), or add entries to `ABBREV`.
-If you have real receipts, label a few hundred line items by hand and mix
-them in. That is the best way to cover your stores' particular abbreviations.
+Products live in [`catalogue.txt`](catalogue.txt), one per line:
+
+```
+target | category | brands | sizes | name variants
+Dark Chocolate|confectionery|LINDT,GHIRARDELLI|100G,3.5OZ|DARK CHOCOLATE;CHOCOLATE DARK 70%
+```
+
+The loader rejects malformed lines, duplicate targets, and any name variant
+that is shared by two products. To add new abbreviations, edit `ABBREV` in
+`generate_items.py`. You can point the generator at your own file with
+`--catalogue my_products.txt`.

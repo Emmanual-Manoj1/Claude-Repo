@@ -12,139 +12,27 @@ expand receipt abbreviations. The abbreviations come from a curated table
 plus automatic vowel-dropping and truncation. Optional OCR noise reuses the
 noise model in generate.py.
 
+Products live in catalogue.txt. Lines that are not products (totals, fees,
+coupons) are labelled "Non-Item". Output is written as JSONL, plus chat-style
+JSONL for LLM fine-tuning and CSV.
+
 Usage:
-    python generate_items.py --out data_items --train 20000 --val 2000 --test 2000
-    python generate_items.py --holdout-brands 0.15   # test on unseen brands
+    python generate_items.py                          # 50k / 5k / 5k
+    python generate_items.py --holdout-brands 0.15    # test on unseen brands
+    python generate_items.py --holdout-products 0.1   # test on unseen products
 """
 
 import argparse
+import csv
 import json
 import random
 import re
+from collections import Counter
 from pathlib import Path
 
 from generate import LEVELS, corrupt_line, write_jsonl
 
-# --------------------------------------------------------------------------
-# Product catalogue
-#
-# target | category | brands (comma sep, "-" = unbranded/store) |
-#   sizes (comma sep) | raw name variants as printed (semicolon sep)
-# --------------------------------------------------------------------------
-
-CATALOGUE = """
-Dark Chocolate|confectionery|LINDT,GHIRARDELLI,GREEN & BLACKS,HERSHEYS,GODIVA,TONYS CHOCOLONELY,ALTER ECO|100G,3.5OZ,80G,4.4OZ,200G|DARK CHOCOLATE;DARK CHOCOLATE BAR;CHOCOLATE DARK 70%;DARK CHOCOLATE 85% COCOA;EXCELLENCE DARK CHOCOLATE
-Milk Chocolate|confectionery|CADBURY,HERSHEYS,LINDT,MILKA,GALAXY,TOBLERONE|100G,1.55OZ,200G,45G|MILK CHOCOLATE;MILK CHOCOLATE BAR;DAIRY MILK CHOCOLATE;CHOCOLATE MILK BAR
-White Chocolate|confectionery|LINDT,GHIRARDELLI,MILKYBAR,HERSHEYS|100G,3.5OZ|WHITE CHOCOLATE;WHITE CHOCOLATE BAR
-Chocolate Truffles|confectionery|LINDT,FERRERO,GODIVA|200G,5.1OZ,12CT|CHOCOLATE TRUFFLES;LINDOR TRUFFLES;ROCHER TRUFFLES ASSORTED
-Gummy Candy|confectionery|HARIBO,TROLLI,SOUR PATCH|5OZ,140G,200G|GUMMY BEARS;GUMMY CANDY;SOUR GUMMY WORMS;GOLDBEARS GUMMY
-Chewing Gum|confectionery|TRIDENT,EXTRA,ORBIT,WRIGLEYS|14CT,15PC,3PK|CHEWING GUM;SUGAR FREE GUM;SPEARMINT GUM;PEPPERMINT GUM
-Whole Milk|dairy|HORIZON,ORGANIC VALLEY,FAIRLIFE,LAND O LAKES,-|1GAL,1/2GAL,2L,4PT,1L,64OZ|WHOLE MILK;MILK WHOLE;VITAMIN D MILK;WHOLE MILK HOMOGENIZED
-Skim Milk|dairy|HORIZON,FAIRLIFE,-|1GAL,1/2GAL,2L,1L|SKIM MILK;FAT FREE MILK;NONFAT MILK;MILK SKIM
-Low Fat Milk|dairy|HORIZON,ORGANIC VALLEY,-|1GAL,1/2GAL,2L|2% MILK;REDUCED FAT MILK;LOW FAT MILK;1% LOWFAT MILK
-Oat Milk|dairy|OATLY,CALIFIA,SILK,PLANET OAT|64OZ,1L,32OZ|OAT MILK;OATMILK ORIGINAL;OAT BEVERAGE BARISTA
-Almond Milk|dairy|SILK,ALMOND BREEZE,CALIFIA|64OZ,1/2GAL,1L|ALMOND MILK;ALMONDMILK UNSWEETENED;ALMOND BEVERAGE
-Butter|dairy|KERRYGOLD,LAND O LAKES,PLUGRA,-|8OZ,1LB,250G,4 STICKS|BUTTER;SALTED BUTTER;UNSALTED BUTTER;SWEET CREAM BUTTER;IRISH BUTTER
-Cheddar Cheese|dairy|TILLAMOOK,CABOT,KRAFT,CRACKER BARREL,-|8OZ,2LB,200G,16OZ|CHEDDAR CHEESE;SHARP CHEDDAR;MILD CHEDDAR CHEESE;SHREDDED CHEDDAR;EXTRA SHARP CHEDDAR BLOCK
-Mozzarella Cheese|dairy|GALBANI,POLLY-O,KRAFT,-|8OZ,16OZ,125G|MOZZARELLA CHEESE;SHREDDED MOZZARELLA;FRESH MOZZARELLA;MOZZARELLA LOW MOISTURE
-Parmesan Cheese|dairy|BELGIOIOSO,KRAFT,-|5OZ,8OZ,200G|PARMESAN CHEESE;GRATED PARMESAN;PARMIGIANO REGGIANO;SHAVED PARMESAN
-Cream Cheese|dairy|PHILADELPHIA,-|8OZ,227G,12OZ|CREAM CHEESE;CREAM CHEESE BRICK;WHIPPED CREAM CHEESE;CREAM CHEESE SPREAD
-Greek Yogurt|dairy|CHOBANI,FAGE,OIKOS,-|5.3OZ,32OZ,500G,4PK|GREEK YOGURT;PLAIN GREEK YOGURT;GREEK YOGURT VANILLA;NONFAT GREEK YOGURT;TOTAL 0% GREEK YOGURT
-Yogurt|dairy|YOPLAIT,DANNON,ACTIVIA,-|6OZ,32OZ,4PK,8PK|YOGURT;STRAWBERRY YOGURT;LOW FAT YOGURT;ORIGINAL YOGURT
-Sour Cream|dairy|DAISY,BREAKSTONE,-|16OZ,8OZ|SOUR CREAM;LIGHT SOUR CREAM;SOUR CREAM REGULAR
-Heavy Cream|dairy|HORIZON,-|16OZ,1PT,32OZ|HEAVY CREAM;HEAVY WHIPPING CREAM;WHIPPING CREAM
-Eggs|dairy|EGGLANDS BEST,VITAL FARMS,PETE AND GERRYS,-|12CT,18CT,6CT,1DZ|LARGE EGGS;EGGS LARGE;GRADE A LARGE EGGS;BROWN EGGS;FREE RANGE EGGS;PASTURE RAISED EGGS
-White Bread|bakery|WONDER,SUNBEAM,-|20OZ,24OZ,800G|WHITE BREAD;BREAD WHITE;SANDWICH BREAD WHITE;CLASSIC WHITE BREAD
-Wheat Bread|bakery|DAVES KILLER BREAD,NATURES OWN,PEPPERIDGE FARM,-|20OZ,24OZ,27OZ|WHOLE WHEAT BREAD;WHEAT BREAD;100% WHOLE WHEAT BREAD;HONEY WHEAT BREAD;21 WHOLE GRAINS BREAD
-Bagels|bakery|THOMAS,LENDERS,-|6CT,20OZ|BAGELS;PLAIN BAGELS;EVERYTHING BAGELS;BAGELS PRE-SLICED
-Tortillas|bakery|MISSION,GUERRERO,-|10CT,20CT,8CT|FLOUR TORTILLAS;CORN TORTILLAS;TORTILLAS FLOUR SOFT TACO
-Croissants|bakery|-|4CT,6CT|CROISSANTS;BUTTER CROISSANTS;MINI CROISSANTS
-Bananas|produce|DOLE,CHIQUITA,-|LB,KG,EA|BANANAS;BANANA;BANANAS YELLOW;ORGANIC BANANAS
-Apples|produce|-|LB,KG,3LB BAG|GALA APPLES;APPLES GALA;HONEYCRISP APPLES;FUJI APPLE;GRANNY SMITH APPLES;APPLE RED DELICIOUS
-Avocados|produce|-|EA,4CT,BAG|AVOCADO;HASS AVOCADO;AVOCADOS LARGE;AVOCADO BAG
-Tomatoes|produce|-|LB,KG|TOMATOES;ROMA TOMATOES;TOMATOES ON THE VINE;CHERRY TOMATOES;GRAPE TOMATOES
-Potatoes|produce|-|5LB,LB,10LB|RUSSET POTATOES;POTATOES RUSSET;YUKON GOLD POTATOES;RED POTATOES;SWEET POTATOES
-Onions|produce|-|LB,3LB,KG|YELLOW ONIONS;ONIONS YELLOW;RED ONION;WHITE ONIONS;SWEET ONIONS
-Spinach|produce|EARTHBOUND FARM,-|5OZ,10OZ,16OZ|BABY SPINACH;SPINACH;ORGANIC BABY SPINACH;SPINACH LEAVES
-Lettuce|produce|-|EA,HEAD|ROMAINE LETTUCE;ICEBERG LETTUCE;LETTUCE ROMAINE HEARTS;BUTTER LETTUCE;LETTUCE GREEN LEAF
-Carrots|produce|BOLTHOUSE,GRIMMWAY,-|1LB,2LB,5LB|CARROTS;BABY CARROTS;CARROTS WHOLE;SHREDDED CARROTS
-Strawberries|produce|DRISCOLLS,-|1LB,16OZ,2LB|STRAWBERRIES;STRAWBERRY;STRAWBERRIES CLAMSHELL
-Blueberries|produce|DRISCOLLS,-|6OZ,1PT,18OZ|BLUEBERRIES;BLUEBERRY;BLUEBERRIES PINT
-Lemons|produce|-|EA,2LB BAG|LEMONS;LEMON;LEMONS BAG;MEYER LEMONS
-Chicken Breast|meat|PERDUE,TYSON,FOSTER FARMS,-|LB,1.5LB,KG,2PK|CHICKEN BREAST;BONELESS SKINLESS CHICKEN BREAST;CHICKEN BREAST FILLETS;BNLS SKNLS CHICKEN BREAST
-Chicken Thighs|meat|PERDUE,TYSON,-|LB,2LB|CHICKEN THIGHS;BONELESS CHICKEN THIGHS;CHICKEN THIGH BONE IN
-Ground Beef|meat|-|1LB,2LB,500G|GROUND BEEF;GROUND BEEF 80/20;LEAN GROUND BEEF 93/7;GROUND CHUCK;BEEF MINCE
-Steak|meat|-|LB,KG|RIBEYE STEAK;NEW YORK STRIP STEAK;SIRLOIN STEAK;BEEF STEAK TOP SIRLOIN
-Bacon|meat|OSCAR MAYER,SMITHFIELD,WRIGHT,-|12OZ,16OZ,1LB|BACON;THICK CUT BACON;HICKORY SMOKED BACON;BACON SLICED
-Sliced Ham|meat|OSCAR MAYER,HILLSHIRE FARM,BOARS HEAD,-|9OZ,16OZ,LB|SLICED HAM;HAM DELI SLICED;HONEY HAM;BLACK FOREST HAM;SMOKED HAM
-Sausages|meat|JOHNSONVILLE,HILLSHIRE FARM,-|19OZ,14OZ,5CT|SAUSAGES;ITALIAN SAUSAGE;BRATWURST;BREAKFAST SAUSAGE LINKS;SMOKED SAUSAGE
-Salmon|seafood|-|LB,KG,8OZ|SALMON FILLET;ATLANTIC SALMON;SALMON FILLETS SKIN ON;WILD SOCKEYE SALMON
-Shrimp|seafood|-|1LB,2LB,12OZ|SHRIMP;LARGE SHRIMP RAW;COOKED SHRIMP;SHRIMP PEELED DEVEINED
-Canned Tuna|seafood|STARKIST,BUMBLE BEE,CHICKEN OF THE SEA|5OZ,4PK,12OZ|TUNA;CHUNK LIGHT TUNA;SOLID WHITE ALBACORE TUNA;TUNA IN WATER
-Spaghetti|pantry|BARILLA,DE CECCO,RONZONI,-|16OZ,1LB,500G|SPAGHETTI;SPAGHETTI PASTA;THIN SPAGHETTI;SPAGHETTI NO 5
-Penne Pasta|pantry|BARILLA,DE CECCO,-|16OZ,1LB,500G|PENNE;PENNE RIGATE;PENNE PASTA;MINI PENNE
-White Rice|pantry|MAHATMA,UNCLE BENS,-|2LB,5LB,1KG|WHITE RICE;LONG GRAIN WHITE RICE;JASMINE RICE;BASMATI RICE;RICE ENRICHED
-Brown Rice|pantry|LUNDBERG,-|2LB,1KG|BROWN RICE;LONG GRAIN BROWN RICE;BROWN RICE WHOLE GRAIN
-Pasta Sauce|pantry|RAO'S,PREGO,RAGU,BARILLA,-|24OZ,32OZ,680G|MARINARA SAUCE;PASTA SAUCE;TOMATO BASIL SAUCE;TRADITIONAL PASTA SAUCE
-Ketchup|pantry|HEINZ,HUNTS,-|20OZ,32OZ,500ML|KETCHUP;TOMATO KETCHUP;KETCHUP SQUEEZE
-Mayonnaise|pantry|HELLMANNS,BEST FOODS,DUKES,KEWPIE|30OZ,15OZ,400ML|MAYONNAISE;REAL MAYONNAISE;MAYO;LIGHT MAYONNAISE
-Mustard|pantry|FRENCHS,GREY POUPON,-|14OZ,8OZ|YELLOW MUSTARD;DIJON MUSTARD;MUSTARD;SPICY BROWN MUSTARD
-Peanut Butter|pantry|JIF,SKIPPY,SMUCKERS,-|16OZ,28OZ,40OZ|PEANUT BUTTER;CREAMY PEANUT BUTTER;CRUNCHY PEANUT BUTTER;NATURAL PEANUT BUTTER
-Jam|pantry|SMUCKERS,BONNE MAMAN,-|12OZ,18OZ,340G|STRAWBERRY JAM;GRAPE JELLY;RASPBERRY PRESERVES;JAM APRICOT
-Honey|pantry|NATURE NATE'S,-|12OZ,16OZ,32OZ|HONEY;RAW HONEY;CLOVER HONEY;HONEY BEAR SQUEEZE
-Olive Oil|pantry|BERTOLLI,COLAVITA,CALIFORNIA OLIVE RANCH,-|500ML,1L,16.9OZ,25.5OZ|OLIVE OIL;EXTRA VIRGIN OLIVE OIL;EVOO;OLIVE OIL EXTRA VIRGIN
-Vegetable Oil|pantry|CRISCO,WESSON,-|48OZ,1GAL,1L|VEGETABLE OIL;CANOLA OIL;OIL VEGETABLE PURE
-All Purpose Flour|pantry|GOLD MEDAL,KING ARTHUR,PILLSBURY,-|5LB,2LB,1KG|ALL PURPOSE FLOUR;FLOUR ALL PURPOSE;UNBLEACHED FLOUR;PLAIN FLOUR
-Sugar|pantry|DOMINO,C&H,-|4LB,2LB,1KG|GRANULATED SUGAR;SUGAR;PURE CANE SUGAR;BROWN SUGAR;POWDERED SUGAR
-Salt|pantry|MORTON,DIAMOND CRYSTAL,-|26OZ,3LB|SALT;IODIZED SALT;KOSHER SALT;SEA SALT
-Black Pepper|pantry|MCCORMICK,-|3OZ,6OZ|BLACK PEPPER;GROUND BLACK PEPPER;PEPPERCORNS BLACK
-Breakfast Cereal|pantry|KELLOGGS,GENERAL MILLS,POST,QUAKER|12OZ,18OZ,500G|CORN FLAKES;CHEERIOS;FROSTED FLAKES;RAISIN BRAN;HONEY NUT CHEERIOS;CEREAL
-Oatmeal|pantry|QUAKER,BOBS RED MILL,-|42OZ,18OZ,10CT|OLD FASHIONED OATS;ROLLED OATS;QUICK OATS;INSTANT OATMEAL;STEEL CUT OATS
-Granola Bars|snacks|NATURE VALLEY,KIND,CLIF,QUAKER|6CT,12CT,8.9OZ|GRANOLA BARS;CRUNCHY GRANOLA BARS;PROTEIN BAR;CHEWY GRANOLA BARS;NUT BARS
-Potato Chips|snacks|LAYS,KETTLE,UTZ,CAPE COD,PRINGLES|8OZ,10OZ,1.5OZ,150G|POTATO CHIPS;CLASSIC POTATO CHIPS;SEA SALT CHIPS;KETTLE CHIPS;SOUR CREAM ONION CHIPS
-Tortilla Chips|snacks|TOSTITOS,DORITOS,SIETE,-|11OZ,13OZ|TORTILLA CHIPS;RESTAURANT STYLE TORTILLA CHIPS;NACHO CHEESE TORTILLA CHIPS
-Crackers|snacks|RITZ,TRISCUIT,CHEEZ-IT,WHEAT THINS,GOLDFISH|8.8OZ,12OZ,200G|CRACKERS;ORIGINAL CRACKERS;CHEESE CRACKERS;WHOLE GRAIN CRACKERS
-Cookies|snacks|OREO,CHIPS AHOY,PEPPERIDGE FARM,-|14OZ,13OZ,300G|COOKIES;CHOCOLATE CHIP COOKIES;SANDWICH COOKIES;OATMEAL RAISIN COOKIES
-Popcorn|snacks|ORVILLE,SKINNYPOP,SMARTFOOD,-|3CT,6CT,4.4OZ|POPCORN;MICROWAVE POPCORN;BUTTER POPCORN;WHITE CHEDDAR POPCORN
-Almonds|snacks|BLUE DIAMOND,WONDERFUL,-|16OZ,6OZ,1LB|ALMONDS;ROASTED ALMONDS;RAW ALMONDS;SALTED ALMONDS
-Mixed Nuts|snacks|PLANTERS,-|10.3OZ,16OZ|MIXED NUTS;DELUXE MIXED NUTS;TRAIL MIX
-Coffee Beans|beverages|STARBUCKS,LAVAZZA,PEETS,DUNKIN,ILLY|12OZ,1LB,250G,2LB|WHOLE BEAN COFFEE;COFFEE BEANS;MEDIUM ROAST COFFEE;FRENCH ROAST WHOLE BEAN
-Ground Coffee|beverages|FOLGERS,MAXWELL HOUSE,STARBUCKS,DUNKIN|30.5OZ,12OZ,250G|GROUND COFFEE;CLASSIC ROAST GROUND COFFEE;COFFEE GROUND MEDIUM
-Coffee Pods|beverages|KEURIG,NESPRESSO,STARBUCKS,GREEN MOUNTAIN|12CT,24CT,10CT|K-CUP PODS;COFFEE PODS;CAPSULES ESPRESSO;BREAKFAST BLEND K CUPS
-Tea Bags|beverages|LIPTON,TWININGS,BIGELOW,TAZO|20CT,100CT,40CT|TEA BAGS;BLACK TEA;GREEN TEA;ENGLISH BREAKFAST TEA;CHAMOMILE TEA
-Orange Juice|beverages|TROPICANA,SIMPLY,MINUTE MAID,-|52OZ,89OZ,1.75L,1L|ORANGE JUICE;OJ;PURE PREMIUM ORANGE JUICE;ORANGE JUICE NO PULP
-Apple Juice|beverages|MOTTS,TREE TOP,-|64OZ,1L|APPLE JUICE;100% APPLE JUICE;APPLE JUICE UNSWEETENED
-Cola|beverages|COCA-COLA,PEPSI,RC|2L,12PK,12OZ,6PK,355ML|COLA;COKE;COCA COLA;PEPSI COLA;CLASSIC COLA
-Diet Cola|beverages|COCA-COLA,PEPSI|2L,12PK,12OZ|DIET COKE;COKE ZERO;DIET PEPSI;PEPSI ZERO SUGAR;DIET COLA
-Lemon Lime Soda|beverages|SPRITE,7UP,SIERRA MIST|2L,12PK|LEMON LIME SODA;SPRITE;7UP SODA;LEMON LIME
-Sparkling Water|beverages|LACROIX,PERRIER,SAN PELLEGRINO,BUBLY,TOPO CHICO|12PK,8PK,750ML,1L|SPARKLING WATER;SPARKLING MINERAL WATER;LIME SPARKLING WATER;SELTZER
-Bottled Water|beverages|DASANI,AQUAFINA,FIJI,EVIAN,POLAND SPRING|24PK,1L,1.5L,16.9OZ|BOTTLED WATER;SPRING WATER;PURIFIED WATER;NATURAL SPRING WATER
-Energy Drink|beverages|RED BULL,MONSTER,CELSIUS,ROCKSTAR|8.4OZ,16OZ,4PK,250ML|ENERGY DRINK;SUGAR FREE ENERGY DRINK;ENERGY DRINK ORIGINAL
-Sports Drink|beverages|GATORADE,POWERADE,BODYARMOR|28OZ,8PK,20OZ|SPORTS DRINK;THIRST QUENCHER;ELECTROLYTE DRINK
-Beer|alcohol|BUDWEISER,CORONA,HEINEKEN,MILLER LITE,STELLA ARTOIS|6PK,12PK,24PK,12OZ|BEER;LAGER;LIGHT BEER;IPA;PALE ALE;EXTRA BEER
-Red Wine|alcohol|BAREFOOT,YELLOW TAIL,JOSH CELLARS,19 CRIMES|750ML,1.5L|RED WINE;CABERNET SAUVIGNON;MERLOT;PINOT NOIR;RED BLEND
-White Wine|alcohol|BAREFOOT,KENDALL JACKSON,KIM CRAWFORD|750ML,1.5L|WHITE WINE;CHARDONNAY;SAUVIGNON BLANC;PINOT GRIGIO
-Frozen Pizza|frozen|DIGIORNO,RED BARON,TOTINOS,NEWMANS OWN|12IN,28OZ,10.7OZ|FROZEN PIZZA;PEPPERONI PIZZA;CHEESE PIZZA RISING CRUST;SUPREME PIZZA
-Ice Cream|frozen|BEN & JERRYS,HAAGEN-DAZS,BREYERS,TILLAMOOK|1PT,1.5QT,48OZ|ICE CREAM;VANILLA ICE CREAM;CHOCOLATE ICE CREAM;COOKIE DOUGH ICE CREAM
-Frozen Vegetables|frozen|BIRDS EYE,GREEN GIANT,-|12OZ,16OZ,1KG|FROZEN VEGETABLES;MIXED VEGETABLES FROZEN;STEAMFRESH BROCCOLI;FROZEN PEAS;FROZEN CORN
-French Fries|frozen|ORE-IDA,MCCAIN,-|32OZ,1KG|FRENCH FRIES;CRINKLE CUT FRIES;SHOESTRING FRIES;GOLDEN FRIES
-Toilet Paper|household|CHARMIN,COTTONELLE,SCOTT,ANGEL SOFT|12RL,24RL,6 ROLLS,18 MEGA|TOILET PAPER;BATH TISSUE;ULTRA SOFT TOILET PAPER;MEGA ROLL BATH TISSUE
-Paper Towels|household|BOUNTY,VIVA,SPARKLE,-|6RL,8RL,12 ROLLS|PAPER TOWELS;SELECT A SIZE PAPER TOWELS;PAPER TOWEL DOUBLE ROLLS
-Dish Soap|household|DAWN,PALMOLIVE,SEVENTH GENERATION,METHOD|19.4OZ,28OZ,500ML|DISH SOAP;DISHWASHING LIQUID;ULTRA DISH SOAP;DISH LIQUID LEMON
-Laundry Detergent|household|TIDE,PERSIL,GAIN,ARM & HAMMER,ALL|92OZ,150OZ,42CT,64LD|LAUNDRY DETERGENT;LIQUID DETERGENT;DETERGENT PODS;HE LAUNDRY DETERGENT
-Trash Bags|household|GLAD,HEFTY,-|13GAL,40CT,30GAL,80CT|TRASH BAGS;KITCHEN TRASH BAGS;GARBAGE BAGS DRAWSTRING
-Aluminum Foil|household|REYNOLDS,-|75SQFT,200SQFT|ALUMINUM FOIL;FOIL WRAP;HEAVY DUTY FOIL
-Toothpaste|personal care|COLGATE,CREST,SENSODYNE,TOMS|4OZ,6OZ,2PK,100ML|TOOTHPASTE;WHITENING TOOTHPASTE;FLUORIDE TOOTHPASTE;CAVITY PROTECTION TOOTHPASTE
-Shampoo|personal care|PANTENE,HEAD & SHOULDERS,DOVE,TRESEMME,SUAVE|12OZ,400ML,28OZ|SHAMPOO;DAILY MOISTURE SHAMPOO;DANDRUFF SHAMPOO;CLARIFYING SHAMPOO
-Body Wash|personal care|DOVE,OLD SPICE,DIAL,IRISH SPRING|22OZ,16OZ,500ML|BODY WASH;MOISTURIZING BODY WASH;SHOWER GEL
-Deodorant|personal care|DEGREE,OLD SPICE,DOVE,SECRET,NATIVE|2.6OZ,2PK,50ML|DEODORANT;ANTIPERSPIRANT;DEODORANT STICK;INVISIBLE SOLID ANTIPERSPIRANT
-Pain Reliever|pharmacy|ADVIL,TYLENOL,ALEVE,MOTRIN,-|100CT,50CT,24CT,200MG|IBUPROFEN;ACETAMINOPHEN;PAIN RELIEVER;IBUPROFEN TABLETS 200MG;EXTRA STRENGTH TABLETS
-Vitamins|pharmacy|NATURE MADE,CENTRUM,ONE A DAY,-|60CT,100CT,90CT|MULTIVITAMIN;VITAMIN C;VITAMIN D3;DAILY MULTIVITAMIN TABLETS;GUMMY VITAMINS
-Bandages|pharmacy|BAND-AID,CURAD,-|30CT,60CT,ASST|BANDAGES;ADHESIVE BANDAGES;FLEXIBLE FABRIC BANDAGES;ASSORTED BANDAGES
-Dog Food|pet|PURINA,PEDIGREE,BLUE BUFFALO,IAMS|30LB,15LB,13OZ,6KG|DOG FOOD;DRY DOG FOOD;ADULT DOG FOOD CHICKEN;WET DOG FOOD
-Cat Food|pet|FRISKIES,FANCY FEAST,MEOW MIX,PURINA|3OZ,16LB,24CT|CAT FOOD;DRY CAT FOOD;WET CAT FOOD PATE;INDOOR CAT FOOD
-Cat Litter|pet|TIDY CATS,ARM & HAMMER,FRESH STEP|20LB,40LB,14LB|CAT LITTER;CLUMPING CAT LITTER;CLUMPING LITTER MULTI CAT
-"""
+CATALOGUE_PATH = Path(__file__).with_name("catalogue.txt")
 
 # Curated receipt abbreviations seen on real POS systems.
 ABBREV = {
@@ -228,6 +116,76 @@ ABBREV = {
     "STICKS": ["STK", "STKS"], "PACK": ["PK"], "COUNT": ["CT"],
 }
 
+# Abbreviations for the wider catalogue.
+ABBREV.update({
+    "CARAMEL": ["CARML", "CRML"], "LICORICE": ["LICOR", "LIC"], "MINTS": ["MNTS"],
+    "MARSHMALLOWS": ["MRSHMLW", "MARSH", "MLLW"], "HAZELNUT": ["HZLNT", "HAZ"],
+    "SPREAD": ["SPRD"], "CREAMER": ["CRMR", "CREAMR"], "COTTAGE": ["COTT", "CTG"],
+    "SWISS": ["SWS"], "CRUMBLED": ["CRMBL", "CRUMB"], "SINGLES": ["SNGL"],
+    "PROVOLONE": ["PROV", "PROVO"], "RICOTTA": ["RICOT", "RCTA"],
+    "MARGARINE": ["MARG", "MRGRN"], "WHIPPED": ["WHPD", "WHIP"],
+    "HAMBURGER": ["HAMB", "HMBRGR"], "BUNS": ["BUN", "BNS"], "ROLLS": ["RLS", "ROLL"],
+    "SOURDOUGH": ["SRDGH", "SOURD"], "BAGUETTE": ["BAGT", "BAGUET"],
+    "ENGLISH": ["ENG", "ENGL"], "MUFFINS": ["MUFF", "MFN"], "DONUTS": ["DNTS", "DONUT"],
+    "ORANGES": ["ORNG", "ORANGE"], "SEEDLESS": ["SDLS", "SDLSS"], "GRAPES": ["GRP", "GRAPE"],
+    "WATERMELON": ["WTRMLN", "WMELON"], "PINEAPPLE": ["PINE", "PNAPL"],
+    "RASPBERRIES": ["RASPB", "RSPBRY"], "BROCCOLI": ["BROC", "BRCLI"],
+    "CAULIFLOWER": ["CAULI", "CLFLWR"], "CUCUMBER": ["CUKE", "CUC", "CUCMBR"],
+    "PEPPERS": ["PEPP", "PPRS"], "MUSHROOMS": ["MUSH", "MSHRM"],
+    "ZUCCHINI": ["ZUCC", "ZUCH"], "ASPARAGUS": ["ASPAR", "ASP"],
+    "PORK": ["PRK"], "CHOPS": ["CHP", "CHPS"], "TENDERLOIN": ["TNDRLN", "TENDER"],
+    "TURKEY": ["TRKY", "TURK"], "WINGS": ["WNGS", "WING"], "FRANKS": ["FRNK", "FRK"],
+    "ROASTED": ["RSTD", "RST"], "SALAMI": ["SLMI"], "PEPPERONI": ["PEP", "PEPRONI"],
+    "ROTISSERIE": ["ROTIS", "ROT", "RTSR"], "FIRM": ["FRM"], "BURGER": ["BRGR", "BURG"],
+    "FILLET": ["FLT", "FIL"], "FILLETS": ["FLTS", "FIL"], "SARDINES": ["SARD", "SRDN"],
+    "MACARONI": ["MAC", "MACR"], "NOODLES": ["NDL", "NOOD", "NDLS"],
+    "LASAGNA": ["LASAG", "LSGNA"], "DICED": ["DCD", "DICE"], "CRUSHED": ["CRSHD", "CRUSH"],
+    "BEANS": ["BNS", "BEAN"], "KIDNEY": ["KIDNY", "KDNY"], "CHICKPEAS": ["CHKPEA", "CHKPS"],
+    "SOUP": ["SP", "SOUP"], "CONDENSED": ["COND", "CNDNSD"], "BROTH": ["BRTH", "BROTH"],
+    "SALSA": ["SLSA"], "BARBECUE": ["BBQ", "BARBQ"], "DRESSING": ["DRSG", "DRESS", "DRS"],
+    "RANCH": ["RNCH"], "VINEGAR": ["VIN", "VINEG", "VNGR"], "BALSAMIC": ["BALS", "BLSMC"],
+    "PICKLES": ["PCKL", "PICKL"], "OLIVES": ["OLV", "OLVS"], "SYRUP": ["SYR", "SYRP"],
+    "PANCAKE": ["PNCK", "PANCK"], "BAKING": ["BKG", "BAKG"], "POWDER": ["PWD", "PWDR"],
+    "SODA": ["SODA", "SDA"], "EXTRACT": ["EXT", "EXTR"], "CINNAMON": ["CINN", "CIN"],
+    "SEASONING": ["SEAS", "SSNG"], "BREADCRUMBS": ["BRDCRMB"], "CRUMBS": ["CRMB", "CRMBS"],
+    "QUINOA": ["QUIN", "QNOA"], "LENTILS": ["LENT", "LNTL"], "DOUGH": ["DGH", "DOUGH"],
+    "CRESCENT": ["CRES", "CRSCNT"], "BISCUITS": ["BISC", "BSCT"],
+    "RAISINS": ["RAIS", "RSN"], "CRANBERRIES": ["CRAN", "CRNBRY"], "DRIED": ["DRD", "DRY"],
+    "PEANUTS": ["PNUTS", "PNTS"], "CASHEWS": ["CASH", "CSHW"], "PISTACHIOS": ["PIST", "PSTCH"],
+    "PRETZELS": ["PRTZL", "PRETZ"], "JERKY": ["JRKY", "JERK"], "HUMMUS": ["HUMM", "HMMS"],
+    "GUACAMOLE": ["GUAC", "GUACA"], "APPLESAUCE": ["APLSCE", "APPLSC"],
+    "PUDDING": ["PUDD", "PDNG"], "PROTEIN": ["PROT", "PRTN"], "LEMONADE": ["LMNADE", "LEMONAD"],
+    "CRANBERRY": ["CRAN", "CRNBRY"], "GINGER": ["GING", "GNGR"], "KOMBUCHA": ["KOMB", "KMBCHA"],
+    "COCOA": ["COCO", "CCOA"], "COCONUT": ["COCO", "CCNT"], "SMOOTHIE": ["SMTHY", "SMOOTH"],
+    "SELTZER": ["SLTZR", "SELTZ"], "CIDER": ["CIDR", "CDR"], "PROSECCO": ["PROS", "PRSCO"],
+    "CHAMPAGNE": ["CHAMP", "CHMPGN"], "VODKA": ["VDKA", "VOD"], "WHISKEY": ["WHSKY", "WHSK"],
+    "BOURBON": ["BRBN", "BOURB"], "TEQUILA": ["TEQ", "TEQL"], "DINNER": ["DNR", "DINR"],
+    "ENTREE": ["ENTR", "ENT"], "BURRITOS": ["BURR", "BRTO"], "WAFFLES": ["WAFF", "WFL"],
+    "NUGGETS": ["NUGG", "NGTS"], "BREADED": ["BRDD", "BRD"], "DUMPLINGS": ["DMPLNG", "DUMP"],
+    "POTSTICKERS": ["POTSTK", "PTSTKR"], "NAPKINS": ["NAPK", "NPKN"],
+    "FACIAL": ["FCL", "FAC"], "TISSUES": ["TISS", "TSS"], "PLASTIC": ["PLST", "PLAS"],
+    "WRAP": ["WRP"], "STORAGE": ["STOR", "STRG"], "GALLON": ["GAL", "GLN"],
+    "SANDWICH": ["SAND", "SNDWCH", "SW"], "DISHWASHER": ["DSHWSHR", "DISHW", "DW"],
+    "FABRIC": ["FAB", "FBRC"], "SOFTENER": ["SFTNR", "SOFT"], "DRYER": ["DRYR", "DRY"],
+    "SHEETS": ["SHTS", "SHT"], "BLEACH": ["BLCH"], "CLEANER": ["CLNR", "CLEAN"],
+    "DISINFECTING": ["DISINF", "DSNFCT"], "WIPES": ["WIPE", "WPS"], "SPONGES": ["SPNG", "SPONG"],
+    "BULBS": ["BLB", "BULB"], "BATTERIES": ["BATT", "BTRY"], "ALKALINE": ["ALK", "ALKLN"],
+    "PLATES": ["PLT", "PLTS"], "CUPS": ["CUP", "CPS"], "FRESHENER": ["FRSHNR", "FRESH"],
+    "CHARCOAL": ["CHARC", "CHRCL"], "CONDITIONER": ["COND", "CNDTNR"], "HAND": ["HND"],
+    "TOOTHBRUSH": ["TOOTHBR", "TBRUSH", "TB"], "MOUTHWASH": ["MTHWSH", "MOUTHW"],
+    "FLOSS": ["FLS"], "RAZOR": ["RZR"], "SHAVING": ["SHAV", "SHV"], "LOTION": ["LOT", "LTN"],
+    "SUNSCREEN": ["SUNSCR", "SNSCRN"], "SWABS": ["SWB", "SWAB"], "DIAPERS": ["DIAP", "DPR"],
+    "BABY": ["BBY", "BB"], "FORMULA": ["FORM", "FRML"], "INFANT": ["INF", "INFNT"],
+    "MEDICINE": ["MED", "MEDS"], "RELIEF": ["RLF", "REL"], "ALLERGY": ["ALRGY", "ALLRG"],
+    "ANTACID": ["ANTAC", "ANTCD"], "COUGH": ["CGH", "COF"], "DROPS": ["DRP", "DRPS"],
+    "OINTMENT": ["OINT", "ONTMNT"], "ANTIBIOTIC": ["ANTIB", "ABX"], "MELATONIN": ["MELAT", "MLTN"],
+    "THERMOMETER": ["THERM", "THRMTR"], "TREATS": ["TRT", "TRTS"], "BISCUIT": ["BISC"],
+    "SALAD": ["SLD", "SAL"], "SUSHI": ["SUSH"], "FLOWERS": ["FLWR", "FLWRS"],
+    "BOUQUET": ["BQT", "BOUQ"], "GREETING": ["GRTG", "GREET"], "MAGAZINE": ["MAG", "MAGZ"],
+    "MOTOR": ["MTR"], "SYNTHETIC": ["SYN", "SYNTH"], "WINDSHIELD": ["WNDSHLD", "WSHLD"],
+    "WASHER": ["WSHR"], "FLUID": ["FLD"], "UNLEADED": ["UNL", "UNLD"], "GASOLINE": ["GAS"],
+})
+
 # Store / private-label brand codes that print before the product name.
 STORE_BRANDS = ["GV", "KS", "365", "TJ", "SIG", "SB", "GG", "KRO", "MM", "PL",
                 "FRESH MART", "VALU", "HARVEST", "SUNRISE"]
@@ -238,17 +196,33 @@ FILLERS_POST = ["", "", "", "", "", "", " N", " F", " T", " X", " TF", " FT", " 
                 " EA", " NF"]
 
 
-def parse_catalogue():
-    products = []
-    for line in CATALOGUE.strip().splitlines():
-        target, category, brands, sizes, variants = line.split("|")
-        products.append({
+def parse_catalogue(path=CATALOGUE_PATH):
+    """Load products from catalogue.txt, rejecting malformed or ambiguous rows."""
+    products, owner = [], {}
+    for lineno, line in enumerate(Path(path).read_text().splitlines(), 1):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        fields = line.split("|")
+        if len(fields) != 5:
+            raise ValueError(f"{path}:{lineno}: expected 5 '|' fields, got {len(fields)}")
+        target, category, brands, sizes, variants = (f.strip() for f in fields)
+        product = {
             "target": target,
             "category": category,
             "brands": [b.strip() for b in brands.split(",")],
             "sizes": [s.strip() for s in sizes.split(",")],
-            "variants": [v.strip() for v in variants.split(";")],
-        })
+            "variants": [v.strip() for v in variants.split(";") if v.strip()],
+        }
+        for v in product["variants"]:
+            if owner.setdefault(v, target) != target:
+                raise ValueError(f"{path}:{lineno}: variant {v!r} is used by "
+                                 f"both {owner[v]!r} and {target!r}")
+        products.append(product)
+    targets = [p["target"] for p in products]
+    dupes = {t for t in targets if targets.count(t) > 1}
+    if dupes:
+        raise ValueError(f"{path}: duplicate targets {sorted(dupes)}")
     return products
 
 
@@ -302,7 +276,37 @@ def format_size(size, rng):
     return s
 
 
-def make_raw(product, rng, allowed_brands, max_width):
+def add_price(raw, product, rng):
+    """Append the price columns that often get OCR'd onto the item line."""
+    price = rng.uniform(0.5, 25.0) if product["category"] not in ("alcohol", "baby", "automotive") else rng.uniform(5, 60)
+    mode = rng.random()
+    if mode < 0.45:
+        tail = f"{price:.2f}"
+    elif mode < 0.65:
+        tail = f"{price:.2f} {rng.choice(['F', 'N', 'T', 'TF', 'B', 'A'])}"
+    elif mode < 0.8:
+        qty = rng.randint(2, 6)
+        tail = f"{qty} @ {price:.2f} {qty * price:.2f}"
+    elif mode < 0.92 and product["category"] in ("produce", "meat", "seafood", "deli"):
+        weight = rng.uniform(0.2, 4.0)
+        unit = rng.choice(["LB", "KG"])
+        tail = f"{weight:.2f} {unit} @ {price / 4:.2f}/{unit} {weight * price / 4:.2f}"
+    else:
+        tail = f"${price:.2f}"
+    return raw + " " * rng.choice([1, 2, 3, 6, 10]) + tail
+
+
+def vary_case(raw, rng):
+    """Most receipts print in upper case, but some POS systems don't."""
+    r = rng.random()
+    if r < 0.10:
+        return raw.title()
+    if r < 0.14:
+        return raw.lower()
+    return raw
+
+
+def make_raw(product, rng, allowed_brands, max_width, price_ratio):
     """Build one raw receipt string for a product. Returns (raw, brand, size)."""
     strength = rng.choice([0.0, 0.3, 0.6, 0.85, 1.0])
     variant = rng.choice(product["variants"])
@@ -340,23 +344,83 @@ def make_raw(product, rng, allowed_brands, max_width):
         name_end = raw.find(name) + len(name) if name in raw else len(raw)
         cut = max(max_width, name_end)
         raw = raw[:cut].rstrip()
-    return raw.strip(), brand, size
+
+    if rng.random() < price_ratio:
+        raw = add_price(raw, product, rng)
+    return vary_case(raw.strip(), rng), brand, size
+
+
+# --------------------------------------------------------------------------
+# Non-item lines
+#
+# Real receipt text also contains totals, fees, coupons and payment lines.
+# Teaching the model to label these NON_ITEM stops it inventing a product
+# for "COUPON LINDT CHOC" or "BOTTLE DEPOSIT".
+# --------------------------------------------------------------------------
+
+NON_ITEM = "Non-Item"
+
+NON_ITEM_LINES = [
+    "SUBTOTAL", "SUB TOTAL", "TOTAL", "TAX", "SALES TAX", "TAX 1", "TAX 8.25%",
+    "BALANCE DUE", "AMOUNT DUE", "CHANGE DUE", "CHANGE", "CASH", "CASH TEND",
+    "VISA", "MASTERCARD", "DEBIT", "AMEX TEND", "EBT", "GIFT CARD TEND",
+    "BOTTLE DEPOSIT", "CRV", "BTL DEP", "CAN DEPOSIT", "BAG FEE", "PAPER BAG",
+    "BAG CHARGE", "CARRYOUT BAG", "STORE COUPON", "MFR COUPON", "MANUFACTURER CPN",
+    "DIGITAL COUPON", "LOYALTY SAVINGS", "MEMBER SAVINGS", "YOU SAVED", "INSTANT SAVINGS",
+    "PROMO DISCOUNT", "PRICE OVERRIDE", "VOID", "ITEM VOIDED", "REFUND", "RETURN",
+    "TOTAL SAVINGS", "NUMBER OF ITEMS", "ITEMS SOLD", "TIP", "GRATUITY",
+    "SERVICE CHARGE", "DELIVERY FEE", "ROUNDING", "AUTH CODE", "APPROVED",
+    "THANK YOU", "CASHIER", "REG", "TRAN", "STORE", "MEMBER #",
+]
+NON_ITEM_PRODUCT_PREFIXES = ["COUPON", "CPN", "MFR CPN", "SC", "DISC", "SAVINGS",
+                             "REWARDS", "BOGO", "VOID", "RETURN", "DEP"]
+
+
+def make_non_item(rng, products):
+    r = rng.random()
+    if r < 0.45:
+        raw = rng.choice(NON_ITEM_LINES)
+        if rng.random() < 0.7:
+            raw += " " * rng.choice([1, 3, 8]) + f"{rng.uniform(0.05, 150):.2f}"
+            if rng.random() < 0.3:
+                raw += "-"
+    elif r < 0.85:  # coupon or discount that names a product: a hard negative
+        product = rng.choice(products)
+        name = " ".join(abbreviate_word(w, rng, 0.8)
+                        for w in rng.choice(product["variants"]).split())
+        raw = f"{rng.choice(NON_ITEM_PRODUCT_PREFIXES)} {name} -{rng.uniform(0.25, 5):.2f}"
+    else:  # stray reference numbers, dates, separators
+        raw = rng.choice([
+            f"#{rng.randint(1000, 999999)}",
+            f"{rng.randint(1, 12):02d}/{rng.randint(1, 28):02d}/{rng.randint(20, 26)}",
+            f"ST# {rng.randint(1, 9999)} OP# {rng.randint(1, 99)} TE# {rng.randint(1, 40)}",
+            "*" * rng.randint(5, 30), "-" * rng.randint(5, 30), "=" * rng.randint(5, 30),
+            f"**** **** **** {rng.randint(0, 9999):04d}",
+        ])
+    return vary_case(raw, rng)
 
 
 # --------------------------------------------------------------------------
 # Dataset assembly
 # --------------------------------------------------------------------------
 
-def build_split(n, rng, products, allowed_brands, noise_weights, seen):
+def build_split(n, rng, products, all_products, allowed_brands, noise_weights,
+                seen, non_item_ratio, price_ratio):
     rows = []
     attempts = 0
     levels = list(noise_weights)
     weights = list(noise_weights.values())
     while len(rows) < n and attempts < n * 50:
         attempts += 1
-        product = rng.choice(products)
-        max_width = rng.choice([18, 20, 22, 24, 28, 32, 40])
-        raw, brand, size = make_raw(product, rng, allowed_brands, max_width)
+        if rng.random() < non_item_ratio:
+            raw = make_non_item(rng, all_products)
+            row = {"target": NON_ITEM, "category": "non_item", "brand": None, "size": None}
+        else:
+            product = rng.choice(products)
+            max_width = rng.choice([18, 20, 22, 24, 28, 32, 40])
+            raw, brand, size = make_raw(product, rng, allowed_brands, max_width, price_ratio)
+            row = {"target": product["target"], "category": product["category"],
+                   "brand": brand, "size": size}
 
         level = rng.choices(levels, weights=weights)[0]
         if level != "none":
@@ -364,31 +428,56 @@ def build_split(n, rng, products, allowed_brands, noise_weights, seen):
         if not raw or raw in seen:  # no duplicate inputs across splits
             continue
         seen.add(raw)
-        rows.append({
-            "input": raw,
-            "target": product["target"],
-            "category": product["category"],
-            "brand": brand,
-            "size": size,
-            "ocr_noise": level,
-        })
+        rows.append({"input": raw, **row, "ocr_noise": level})
     return rows
+
+
+SYSTEM_PROMPT = ("You normalise receipt line items. Reply with only the generic "
+                 f"product name, or \"{NON_ITEM}\" if the line is not a product.")
+
+
+def write_exports(out, split, rows, formats):
+    if "chat" in formats:
+        with open(out / f"{split}_chat.jsonl", "w", encoding="utf-8") as f:
+            for r in rows:
+                f.write(json.dumps({"messages": [
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": r["input"]},
+                    {"role": "assistant", "content": r["target"]},
+                ]}, ensure_ascii=False) + "\n")
+    if "csv" in formats:
+        cols = ["id", "input", "target", "category", "brand", "size", "ocr_noise",
+                "unseen_brand", "unseen_product"]
+        with open(out / f"{split}.csv", "w", encoding="utf-8", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
+            w.writeheader()
+            w.writerows(rows)
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default="data_items")
-    ap.add_argument("--train", type=int, default=20000)
-    ap.add_argument("--val", type=int, default=2000)
-    ap.add_argument("--test", type=int, default=2000)
+    ap.add_argument("--catalogue", default=str(CATALOGUE_PATH))
+    ap.add_argument("--train", type=int, default=50000)
+    ap.add_argument("--val", type=int, default=5000)
+    ap.add_argument("--test", type=int, default=5000)
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--noise", default="none:0.6,light:0.3,medium:0.1",
+    ap.add_argument("--noise", default="none:0.55,light:0.3,medium:0.12,heavy:0.03",
                     help="OCR noise mix on top of abbreviations "
                          "(levels: none, light, medium, heavy)")
     ap.add_argument("--holdout-brands", type=float, default=0.0,
                     help="fraction of brands that appear only in val/test, "
                          "to measure generalisation to unseen brands")
+    ap.add_argument("--holdout-products", type=float, default=0.0,
+                    help="fraction of products that appear only in val/test "
+                         "(for generative models; a classifier cannot get these)")
+    ap.add_argument("--non-item-ratio", type=float, default=0.06,
+                    help="fraction of lines that are totals, fees, coupons etc.")
+    ap.add_argument("--price-ratio", type=float, default=0.3,
+                    help="fraction of item lines with a price or quantity attached")
+    ap.add_argument("--formats", default="jsonl,chat,csv",
+                    help="comma-separated: jsonl (always written), chat, csv")
     ap.add_argument("--target-case", choices=["title", "upper", "lower"],
                     default="title")
     args = ap.parse_args()
@@ -399,36 +488,60 @@ def main():
         if name != "none" and name not in LEVELS:
             ap.error(f"unknown noise level {name!r}")
         noise_weights[name] = float(w)
+    formats = set(args.formats.split(","))
+    if formats - {"jsonl", "chat", "csv"}:
+        ap.error(f"unknown format(s) {sorted(formats - {'jsonl', 'chat', 'csv'})}")
 
-    products = parse_catalogue()
+    products = parse_catalogue(args.catalogue)
     all_brands = sorted({b for p in products for b in p["brands"] if b != "-"})
     rng = random.Random(args.seed)
-    held = set(rng.sample(all_brands, int(len(all_brands) * args.holdout_brands)))
-    train_brands = set(all_brands) - held
+    held_brands = set(rng.sample(all_brands, int(len(all_brands) * args.holdout_brands)))
+    held_products = set(rng.sample([p["target"] for p in products],
+                                   int(len(products) * args.holdout_products)))
+    train_products = [p for p in products if p["target"] not in held_products]
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     seen = set()
+    stats = {"seed": args.seed, "catalogue_products": len(products),
+             "held_out_brands": sorted(held_brands),
+             "held_out_products": sorted(held_products), "splits": {}}
     for split, n in [("train", args.train), ("val", args.val), ("test", args.test)]:
         split_rng = random.Random(f"{args.seed}-{split}")
-        allowed = train_brands if split == "train" else set(all_brands)
-        rows = build_split(n, split_rng, products, allowed, noise_weights, seen)
+        if split == "train":
+            pool, allowed = train_products, set(all_brands) - held_brands
+        else:
+            pool, allowed = products, set(all_brands)
+        rows = build_split(n, split_rng, pool, products, allowed, noise_weights, seen,
+                           args.non_item_ratio, args.price_ratio)
         for i, r in enumerate(rows):
-            r["id"] = f"{split}-{i:06d}"
             if args.target_case == "upper":
                 r["target"] = r["target"].upper()
             elif args.target_case == "lower":
                 r["target"] = r["target"].lower()
-            r["unseen_brand"] = r["brand"] in held
-        rows = [{"id": r.pop("id"), **r} for r in rows]
+            r["unseen_brand"] = r["brand"] in held_brands
+            r["unseen_product"] = r["target"] in held_products
+            rows[i] = {"id": f"{split}-{i:06d}", **r}
         count = write_jsonl(out / f"{split}.jsonl", rows)
+        write_exports(out, split, rows, formats)
         print(f"wrote {count:>6} examples -> {out / f'{split}.jsonl'}")
         if count < n:
             print(f"  note: only {count} unique inputs found for {split}")
+        stats["splits"][split] = {
+            "examples": count,
+            "labels": len({r["target"] for r in rows}),
+            "non_item": sum(r["target"] == NON_ITEM for r in rows),
+            "unseen_brand": sum(r["unseen_brand"] for r in rows),
+            "unseen_product": sum(r["unseen_product"] for r in rows),
+            "ocr_noise": dict(Counter(r["ocr_noise"] for r in rows)),
+            "categories": dict(sorted(Counter(r["category"] for r in rows).items())),
+        }
 
-    labels = sorted({p["target"] for p in products})
+    labels = sorted({p["target"] for p in products} | {NON_ITEM})
     (out / "labels.txt").write_text("\n".join(labels) + "\n")
+    (out / "stats.json").write_text(json.dumps(stats, indent=2) + "\n")
     print(f"wrote {len(labels):>6} labels   -> {out / 'labels.txt'}")
+    print(f"wrote dataset stats -> {out / 'stats.json'}")
 
 
 if __name__ == "__main__":

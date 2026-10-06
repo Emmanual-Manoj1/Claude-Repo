@@ -1,0 +1,114 @@
+{
+  "seed": 42,
+  "catalogue_products": 320,
+  "held_out_brands": [],
+  "held_out_products": [],
+  "splits": {
+    "train": {
+      "examples": 1000,
+      "labels": 304,
+      "non_item": 54,
+      "unseen_brand": 0,
+      "unseen_product": 0,
+      "ocr_noise": {
+        "none": 541,
+        "medium": 128,
+        "light": 305,
+        "heavy": 26
+      },
+      "categories": {
+        "alcohol": 37,
+        "automotive": 8,
+        "baby": 12,
+        "bakery": 30,
+        "beverages": 75,
+        "confectionery": 37,
+        "dairy": 82,
+        "deli": 12,
+        "floral": 6,
+        "frozen": 44,
+        "general": 6,
+        "household": 64,
+        "meat": 47,
+        "non_item": 54,
+        "pantry": 167,
+        "personal care": 35,
+        "pet": 15,
+        "pharmacy": 29,
+        "produce": 123,
+        "seafood": 31,
+        "snacks": 86
+      }
+    },
+    "val": {
+      "examples": 200,
+      "labels": 148,
+      "non_item": 13,
+      "unseen_brand": 0,
+      "unseen_product": 0,
+      "ocr_noise": {
+        "light": 64,
+        "none": 106,
+        "medium": 26,
+        "heavy": 4
+      },
+      "categories": {
+        "alcohol": 9,
+        "automotive": 4,
+        "baby": 3,
+        "bakery": 8,
+        "beverages": 11,
+        "confectionery": 5,
+        "dairy": 14,
+        "deli": 5,
+        "frozen": 8,
+        "general": 2,
+        "household": 16,
+        "meat": 11,
+        "non_item": 13,
+        "pantry": 37,
+        "personal care": 8,
+        "pet": 1,
+        "pharmacy": 2,
+        "produce": 23,
+        "seafood": 4,
+        "snacks": 16
+      }
+    },
+    "test": {
+      "examples": 200,
+      "labels": 146,
+      "non_item": 9,
+      "unseen_brand": 0,
+      "unseen_product": 0,
+      "ocr_noise": {
+        "none": 116,
+        "light": 55,
+        "heavy": 10,
+        "medium": 19
+      },
+      "categories": {
+        "alcohol": 6,
+        "automotive": 4,
+        "baby": 2,
+        "bakery": 9,
+        "beverages": 13,
+        "confectionery": 6,
+        "dairy": 24,
+        "deli": 5,
+        "frozen": 4,
+        "general": 2,
+        "household": 9,
+        "meat": 10,
+        "non_item": 9,
+        "pantry": 27,
+        "personal care": 7,
+        "pet": 3,
+        "pharmacy": 7,
+        "produce": 31,
+        "seafood": 4,
+        "snacks": 18
+      }
+    }
+  }
+}
