@@ -1,0 +1,96 @@
+2026-10-05 14:39:28.610 10119-10119 ReceiptOCR              pid-10119                            D  ===== SCAN START (parser p1) =====
+2026-10-05 14:39:28.629 10119-10119 ReceiptOCR              pid-10119                            D  ROW [0] Sainsbury's
+2026-10-05 14:39:28.629 10119-10119 ReceiptOCR              pid-10119                            D  ROW [1] Helplng everyone eat beuten
+2026-10-05 14:39:28.629 10119-10119 ReceiptOCR              pid-10119                            D  ROW [2] CAMDN ABBEY ROAD OC
+2026-10-05 14:39:28.629 10119-10119 ReceiptOCR              pid-10119                            D  ROW [3] O207 62554VA
+2026-10-05 14:39:28.629 10119-10119 ReceiptOCR              pid-10119                            D  ROW [4] Salnsbur y s SUpermakeTs t
+2026-10-05 14:39:28.629 10119-10119 ReceiptOCR              pid-10119                            D  ROW [5] 30 Holborn ondon EOIN2H
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [6] Www.SainsbUr yS. CO UK
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [7] Vat Number 660 4548 36
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [8] PAW PATROL 450
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [9] CBEEBIES WEEKLY 450
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [10] BAGUETTE
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [11] DORITOS CO0L43G CO 90
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [12] MONSTER MUNGH LO 90
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [13] CHTCKEN NOODLES 0 80
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [14] MIGHT STRAWBRY 160G £O 40
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [15] TUNA & SWEETCORN SW 22.05
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [16] FLORA BUTTERY SPREAD A1 50
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [17] OASIS SUM FRT 500ML 155
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [18] *RIBENA BLK 500ML 9160
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [19] EGG & CRESS SW 0155
+2026-10-05 14:39:28.630 10119-10119 ReceiptOCR              pid-10119                            D  ROW [20] 2 X Meal Deal HO1 55
+2026-10-05 14:39:28.631 10119-10119 ReceiptOCR              pid-10119                            D  ROW [21] JS HOUMOUS 200G 120
+2026-10-05 14:39:28.631 10119-10119 ReceiptOCR              pid-10119                            D  ROW [22] 13 Sub Tota- P2245
+2026-10-05 14:39:28.631 10119-10119 ReceiptOCR              pid-10119                            D  ROW [23] PROMOTIONS -01.55
+2026-10-05 14:39:28.631 10119-10119 ReceiptOCR              pid-10119                            D  ROW [24] TOTAL TO PAY £20.90
+2026-10-05 14:39:28.631 10119-10119 ReceiptOCR              pid-10119                            D  ROW [25] TICTAC FRUIT AD £1.30
+2026-10-05 14:39:28.631 10119-10119 ReceiptOCR              pid-10119                            D  ROW [26] C23.75
+2026-10-05 14:39:28.651 10119-10119 ReceiptOCR              pid-10119                            D  ===== SCAN END: 19 cards =====
+2026-10-05 14:53:12.502 13079-13079 ReceiptOCR              pid-13079                            D  ===== SCAN START (parser p1) =====
+2026-10-05 14:53:12.509 13079-13079 ReceiptOCR              pid-13079                            D  ROW [0] 450 450 1 00 90 O £O. 90 C0. 80 E0 40 50 O155 160 155 AO55 20 1
+2026-10-05 14:53:12.509 13079-13079 ReceiptOCR              pid-13079                            D  ROW [1] P22.45 -01.55 C20 90
+2026-10-05 14:53:12.509 13079-13079 ReceiptOCR              pid-13079                            D  ROW [2] Sainsbury' Helping everyone eat better CAMDN ABBEY ROAD LOC 0207 625 5474 Sainsburys Spermarkets Ltd 33 Holborn ondom EC1N 2HI Www. Sainspu VS CO UK Vat Number 660 4548 36 SW SPREAD 500ML
+2026-10-05 14:53:12.509 13079-13079 ReceiptOCR              pid-13079                            D  ROW [3] WEEKLY DORITOS COOL 48G xMONSTER MUNCH CHICKEN NOODLES MLIGHT STRAWBRY 160G SWEETCORN BUTTERY SUM FRT xRIBENA BLK 500M EGG & CRESS SW 2 X Meal Deal JS HOUMOUS 200G 13 Sub Total- PROMOTIONS TOTAL TO PAY )
+2026-10-05 14:53:12.509 13079-13079 ReceiptOCR              pid-13079                            D  ROW [4] PAW PATROL CBEEBIES BAGUETTE & TUNA FLORA xOASIS
+2026-10-05 14:53:12.513 13079-13079 ReceiptOCR              pid-13079                            D  ===== SCAN END: 2 cards =====
+2026-10-05 14:53:49.057 13079-13079 ReceiptOCR              pid-13079                            D  ===== SCAN START (parser p1) =====
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [0] CAMDN ABBEY ROAD LOC
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [1] 0207 625 5474
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [2] Sainsbur y s upermakets td
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [3] 33 Holborn London EC1N 2HT
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [4] www.scainsburys. Co.uk
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [5] Vat Number 660 4548 36
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [6] PAW PATROL £4.50
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [7] CBEEBIES WEEKLY E450
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [8] BAGUETTE 1 00
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [9] DORITOS COOL 43G £O 90
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [10] *MONSTER MUNCH O 90
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [11] CHICKEN NOODLES £0.80
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [12] MLIGHT STRAWBRY 160G £0 40
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [13] TUNA 8 SWEETCORN SW 2 05
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [14] FLORA BUTTERY SPREAD 1 50
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [15] *OASIS SUM FRT 500ML 1 55
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [16] *RIBENA BLK 50OML 160
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [17] EGG & CRESS SW 1 55
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [18] 2 X Meal Deal 155
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [19] JS HOUMOUS 200G 120
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [20] 13 Sub Total- 2245
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [21] PROMOT IONS O1.55
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [22] TOTAL TO PAY 20 90
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [23] *|ICTAC FRUIT AD e1.30
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [24] 14 Sub Total £23.75
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [25] PROMOTI ONS -£1.55
+2026-10-05 14:53:49.060 13079-13079 ReceiptOCR              pid-13079                            D  ROW [26] TOTAL TO PAY L22.20
+2026-10-05 14:53:49.069 13079-13079 ReceiptOCR              pid-13079                            D  ===== SCAN END: 14 cards =====
+2026-10-05 14:54:12.277 13079-13079 ReceiptOCR              pid-13079                            D  ===== SCAN START (parser p1) =====
+2026-10-05 14:54:12.279 13079-13079 ReceiptOCR              pid-13079                            D  ROW [0] Sainsbury's
+2026-10-05 14:54:12.279 13079-13079 ReceiptOCR              pid-13079                            D  ROW [1] Helping everyone eat bette
+2026-10-05 14:54:12.279 13079-13079 ReceiptOCR              pid-13079                            D  ROW [2] CAMON ABBEY ROAD 0C
+2026-10-05 14:54:12.279 13079-13079 ReceiptOCR              pid-13079                            D  ROW [3] O20V 625 54V4
+2026-10-05 14:54:12.279 13079-13079 ReceiptOCR              pid-13079                            D  ROW [4] Sainsbur ySUpeaKets Lt
+2026-10-05 14:54:12.279 13079-13079 ReceiptOCR              pid-13079                            D  ROW [5] 3CHolbor London ON2H
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [6] WWW.SalnsUrySCO UK
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [7] Vat NuMbe A 6604548 36
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [8] PAW PATROL 450
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [9] CBEEBIES WEEKUY 450
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [10] BAGUETTE
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [11] DORIT0S COOU43G O 90
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [12] MONSIER MUNCH O 90
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [13] CHICKEN NOODES O 80
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [14] MUIGHTSTRAWBRY 1600
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [15] TUNA SWEETCORN GM A2O5
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [16] FLORA BUTTERYSPREAD
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [17] OASISISUM FRT 500ML 155
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [18] RIBENA BLK500ML E60
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [19] EGG & CRESS SW 156
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [20] 2 X Meal Deal A55
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [21] US HOUMOUS 200G 12O
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [22] 13 Sub Total 2245
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [23] PROMOT IONS 155
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [24] TOTALTO PAY 20 90
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [25] TICTAC FRUIT AD
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [26] 14 Sub Total 23 75
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [27] PROMOTIONS -£1.55
+2026-10-05 14:54:12.280 13079-13079 ReceiptOCR              pid-13079                            D  ROW [28] TOTAL TO PAY £22.20
+2026-10-05 14:54:12.288 13079-13079 ReceiptOCR              pid-13079                            D  ===== SCAN END: 14 cards =====

@@ -83,58 +83,101 @@ down by `noise_level`.
 
 ---
 
-# Item-Name Normalisation Dataset
+# Item-Name Dataset
 
-`generate_items.py` maps raw receipt line items to **generic product names**:
+`generate_items.py` turns one OCR'd receipt line into the **item name only**,
+with no price, size or quantity. Lines that aren't purchased items become
+`Non-Item`.
 
 ```
-LINDT DARK CHOC BR 80 G FT                 -> Dark Chocolate
-Pure Premium Orange Juice 52Oz Tf          -> Orange Juice
-T BLUE BUFFALO ADUL DOG FOOD CHKN   2.33 N -> Dog Food
-VALU GROUND  CHUCK 1LB FF  3.29            -> Ground Beef
-ACT MTH RINS 1L                            -> Mouthwash
-RAGU   TRAD|TIONAL  PA5Ta    $AUCE   24.08 -> Pasta Sauce
-Return Sp Bars -1.90                       -> Non-Item
-PAPER BAG   28',10                         -> Non-Item
+MLIGHT STRAWBRY 160G £O 40        -> Muller Light Strawberry
+TUNA 8 SWEETCORN SW 2 05          -> Tuna & Sweetcorn Sandwich
+*RIBENA BLK 50OML 160             -> Ribena Blackcurrant
+DORIT0S COOU43G O 90              -> Doritos Cool Original
+2 X Meal Deal 155                 -> Meal Deal
+13 Sub Total- 2245                -> Non-Item
+PROMOT IONS O1.55                 -> Non-Item
+Vat NuMbe A 6604548 36            -> Non-Item
 ```
 
-The model learns to drop the brand, size, pack count, PLU code, tax flags and
-price, to expand POS abbreviations, to see through OCR errors, and to
-recognise lines that are not products.
+Every row also carries a `generic` product type (Yogurt, Sandwich, Fruit
+Drink). Train on that instead with `--target generic`.
+
+## Quick start (UK receipt scanner)
 
 ```bash
-python generate_items.py                          # 50k / 5k / 5k -> data_items/
-python generate_items.py --train 200000           # more data
-python generate_items.py --holdout-brands 0.15    # some brands only in val/test
-python generate_items.py --holdout-products 0.1   # some products only in val/test
-python generate_items.py --noise none:1           # abbreviations only, no OCR noise
+python generate_items.py --locale uk --out data_uk     # 50k / 5k / 5k
+pip install scikit-learn
+python baseline.py --data data_uk --test real_test/sainsburys_2026-10-05.jsonl
 ```
 
-Generating 60k examples takes about 3 seconds. A committed sample
-(1000 / 200 / 200) is in [`sample_items/`](sample_items/).
+Use `--locale us` (the default) for US receipts.
 
-## What's covered
+## Built from real scans
 
-- **320 products in 20 categories**: grocery, dairy, produce, meat, seafood,
-  bakery, deli, frozen, snacks, beverages, alcohol, household, personal care,
-  baby, pharmacy, pet, floral, automotive and general merchandise. There are
-  about 550 real brands and about 1,200 printed name variants.
-- **About 360 curated POS abbreviations** (`CHOCOLATE→CHOC/CHC`,
-  `BONELESS→BNLS`, `DISHWASHER→DW`), plus automatic vowel-dropping and
-  truncation for everything else.
-- **Brand variants:** full, first word or initials, plus store-brand codes
-  (`GV`, `KS`, `365`).
-- **Layout:** brand, name and size in any order; PLU codes; tax flags;
-  fixed-width truncation (never into the product name); and in 30% of lines,
-  prices, `2 @ 1.99` multi-buys and `1.32 LB @ 0.59/LB` weights.
-- **Casing:** mostly upper case, with some Title Case and lower case lines.
-- **Non-items (6%):** totals, tax, payment, deposits, bag fees, savings,
-  reference numbers. The hard negatives are coupons and returns that *name a
-  product* (`COUPON LINDT CHOC -1.00`). All of these are labelled `Non-Item`.
-- **OCR noise:** the same noise model as `generate.py`, in a
-  `none/light/medium/heavy` mix.
+`real_logs/` holds ReceiptOCR logcat output from real Sainsbury's scans. The
+UK settings are tuned to what that OCR actually does:
 
-Inputs are de-duplicated across splits, so no test input appears in training.
+| What the OCR did | Example | How the generator copies it |
+|---|---|---|
+| Misread `£` as a letter or digit | `E450`, `C0.80`, `L22.20`, `e1.30`, `A1 50`, `P22.45`, `9160`, `22.05` | `POUND_MISREADS` |
+| Dropped or spaced the decimal point | `450`, `1 55`, `£O 90` | `uk_amount()` |
+| Misread `*` markers | `*RIBENA`, `xMONSTER`, `*\|ICTAC` | UK `fillers_pre` |
+| Printed brands in short form | `MLIGHT` (Muller Light), `TICTAC`, `JS` (Sainsbury's) | brand forms in `catalogue_uk.txt` |
+| Merged or split words | `BLK500ML`, `MUIGHTSTRAWBRY`, `PROMOT IONS` | OCR noise model |
+| Printed many header and total lines | address, phone, VAT number, `13 Sub Total`, `PROMOTIONS` | 30% `Non-Item` lines |
+
+[`real_test/sainsburys_2026-10-05.jsonl`](real_test/) is those scans
+hand-labelled: 78 unique rows, 42 items and 36 non-items. **This is the
+number to watch.** It shows how a model does on your real scanner, not on
+synthetic data.
+
+To label more of your own scans:
+
+```bash
+python parse_logs.py my_scans/*.log --out to_label.jsonl   # then fill in "target"
+python baseline.py --data data_uk --test to_label.jsonl
+```
+
+`parse_logs.py` removes duplicate rows from repeat scans. It also skips scans
+where the OCR merged whole columns into a few rows (for example, all prices
+on one line), because no line-level model can fix those. See "Scanner
+pipeline" below.
+
+## Baseline results
+
+`baseline.py --model nn` predicts the item name of the most similar training
+line, using character 1–4-gram TF-IDF features.
+
+| Test set | Overall | Items | Non-items |
+|---|---|---|---|
+| **Real Sainsbury's scans** (UK data, 50k train) | **88.5%** | 78.6% | 100% |
+| Synthetic UK test | 78.1% | 74.3% | 89.2% |
+| Synthetic US test, `--target generic` | 94.5% | 95.3% | 81.2% |
+
+The remaining real-scan errors are near-misses, such as
+`CHICKEN NOODLES → Supernoodles Chicken Noodles` and
+`MONSTER MUNCH → Monster Munch Crisps`. A nearest-neighbour model can only
+copy names it has seen, so it also does badly on brands missing from
+training (9% on held-out brands). A **generative model** such as ByT5/T5 or a
+fine-tuned LLM using the `*_chat.jsonl` files should do clearly better on
+both counts.
+
+## Scanner pipeline
+
+On a phone (for example ML Kit text recognition):
+
+1. **Rebuild rows from bounding boxes** before anything else. Two of the
+   five original scans came back as column blocks (one is kept in
+   `real_logs/`): all prices in one row, all
+   names in another. Group OCR lines whose vertical centres are within about
+   half a line height, then sort each group left to right. A text model
+   can't recover from this, so it has to be fixed in the app.
+2. **Run the model on each row** to get the item name, or `Non-Item`.
+3. **Keep reading after the first total.** In the logged scans, `TICTAC FRUIT AD`
+   comes after the first `TOTAL TO PAY`, so a parser that stops there misses
+   it. With a model that labels every row, you don't need a fixed "item
+   block".
 
 ## Output files
 
@@ -143,69 +186,56 @@ Inputs are de-duplicated across splits, so no test input appears in training.
 | `train/val/test.jsonl` | main format, with all metadata |
 | `train/val/test_chat.jsonl` | `{"messages": [system, user, assistant]}` for LLM fine-tuning |
 | `train/val/test.csv` | spreadsheets, pandas, AutoML tools |
-| `labels.txt` | the 321 target labels (320 products + `Non-Item`) |
+| `labels.txt` | every target that appears |
 | `stats.json` | per-split counts by category, noise level and held-out slice |
 
-Turn formats off with `--formats jsonl`. A JSONL row:
+A JSONL row:
 
 ```json
-{"id": "train-000000", "input": "POWERADE 8 PK THIRST QUENC TF",
- "target": "Sports Drink", "category": "beverages", "brand": "POWERADE",
- "size": "8PK", "ocr_noise": "none", "unseen_brand": false, "unseen_product": false}
+{"id": "train-000012", "input": "*RIBENA BLK 500ML 1 60", "target": "Ribena Blackcurrant",
+ "name": "Ribena Blackcurrant", "generic": "Fruit Drink", "category": "drinks",
+ "brand": "RIBENA", "size": "500ML", "ocr_noise": "none",
+ "unseen_brand": false, "unseen_product": false}
 ```
 
-`brand` and `size` are ground truth, so the same data can also train an
-extractor.
+Committed samples (1000 / 200 / 200): [`sample_items/`](sample_items/) (US)
+and [`sample_items_uk/`](sample_items_uk/) (UK).
 
-## Picking a model
-
-- **Classifier** (fast and cheap): predict one of the 321 labels. See the
-  baseline below.
-- **Small seq2seq model** (T5 / ByT5 / BART): generates the name, so it can
-  handle products outside the label list. Measure this with
-  `--holdout-products`.
-- **LLM fine-tune:** use the `*_chat.jsonl` files directly.
-
-## Baseline and evaluation
-
-`baseline.py` trains a character n-gram TF-IDF + logistic regression model,
-then reports accuracy by noise level, category and held-out slice:
+## Options
 
 ```bash
-pip install scikit-learn
-python baseline.py --data data_items
+--locale uk|us            # receipt style and catalogue
+--target name|generic     # item name (default) or product type
+--train 200000            # more data; 60k takes about 3 seconds
+--holdout-brands 0.15     # some brands appear only in val/test
+--holdout-products 0.1    # some product groups appear only in val/test
+--noise none:1            # abbreviations only, no OCR noise
+--non-item-ratio 0.3      # share of header/total/promo lines
+--price-ratio 0.85        # share of item lines with a price
+--formats jsonl,chat,csv
 ```
 
-On the default dataset with `--holdout-brands 0.1` (50k train / 5k test):
+## Catalogues
 
-| slice | accuracy |
-|---|---|
-| overall | 98.7% |
-| no OCR noise | 99.9% |
-| light / medium / heavy noise | 98.1% / 96.7% / 91.9% |
-| unseen brands | 94.4% |
-
-The remaining errors are the genuinely hard cases: `POTATO ROLLS → Potatoes`,
-`CANADA DRY GING ALE → Ginger`, `HONEY BBQ SAUCE → Honey`. A good model
-should beat this, especially on heavy noise and unseen brands.
-
-To score your own model, write `{"id": ..., "prediction": ...}` lines for
-`test.jsonl` and run `python baseline.py --data data_items --predictions preds.jsonl`.
-
-> Synthetic accuracy overstates real-world accuracy. Before you trust the
-> number, hand-label 200 or more real receipt lines from your own stores and
-> evaluate on those.
-
-## Extending
-
-Products live in [`catalogue.txt`](catalogue.txt), one per line:
+[`catalogue_uk.txt`](catalogue_uk.txt) has about 730 item names in 115 product
+groups, with about 340 brands. [`catalogue.txt`](catalogue.txt) (US) has 320
+products. One product group per line:
 
 ```
-target | category | brands | sizes | name variants
-Dark Chocolate|confectionery|LINDT,GHIRARDELLI|100G,3.5OZ|DARK CHOCOLATE;CHOCOLATE DARK 70%
+generic | category | brands | sizes | item names
+Yogurt|dairy|Muller Light=MLIGHT/MULLER LIGHT,ACTIVIA|160G,4X120G|STRAWBERRY=STRAWBRY/STRAWB;VANILLA
 ```
 
-The loader rejects malformed lines, duplicate targets, and any name variant
-that is shared by two products. To add new abbreviations, edit `ABBREV` in
-`generate_items.py`. You can point the generator at your own file with
-`--catalogue my_products.txt`.
+- `Clean Name=PRINTED/OTHER PRINTED` says how a brand or item is printed on
+  receipts. The clean part becomes the target, so `COOL ORIGINAL=COOL` teaches
+  `DORITOS COOL → Doritos Cool Original`. Mixed-case clean names are kept
+  exactly as written (`CBeebies Weekly`).
+- Brand `-` means unbranded or store brand, so a store code like `JS` or
+  `TESCO` may be printed in front and dropped from the name. `NONE` means the
+  item is never branded (magazines, meal deals).
+- The loader rejects malformed lines and any item name listed under two
+  product groups.
+
+The fastest way to raise real-scan accuracy is to add the products you
+actually buy, using the forms your receipts print them in, and to label a
+few more real scans.

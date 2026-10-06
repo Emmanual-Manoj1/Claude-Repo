@@ -1,0 +1,113 @@
+{
+  "seed": 42,
+  "locale": "uk",
+  "target": "name",
+  "product_groups": 115,
+  "items": 730,
+  "held_out_brands": [],
+  "held_out_products": [],
+  "splits": {
+    "train": {
+      "examples": 1000,
+      "distinct_targets": 577,
+      "non_item": 288,
+      "unseen_brand": 0,
+      "unseen_product": 0,
+      "ocr_noise": {
+        "heavy": 71,
+        "light": 297,
+        "none": 465,
+        "medium": 167
+      },
+      "categories": {
+        "alcohol": 22,
+        "baby": 11,
+        "bakery": 51,
+        "chilled": 29,
+        "confectionery": 35,
+        "crisps": 45,
+        "cupboard": 90,
+        "dairy": 53,
+        "drinks": 90,
+        "food to go": 46,
+        "frozen": 34,
+        "fruit & veg": 70,
+        "health & beauty": 29,
+        "household": 34,
+        "meat": 34,
+        "news & magazines": 19,
+        "non_item": 288,
+        "pets": 14,
+        "seafood": 6
+      }
+    },
+    "val": {
+      "examples": 200,
+      "distinct_targets": 140,
+      "non_item": 54,
+      "unseen_brand": 0,
+      "unseen_product": 0,
+      "ocr_noise": {
+        "medium": 38,
+        "none": 71,
+        "heavy": 16,
+        "light": 75
+      },
+      "categories": {
+        "alcohol": 5,
+        "baby": 3,
+        "bakery": 11,
+        "chilled": 9,
+        "confectionery": 7,
+        "crisps": 10,
+        "cupboard": 24,
+        "dairy": 16,
+        "drinks": 11,
+        "food to go": 15,
+        "frozen": 6,
+        "fruit & veg": 12,
+        "health & beauty": 3,
+        "household": 5,
+        "meat": 3,
+        "news & magazines": 1,
+        "non_item": 54,
+        "pets": 2,
+        "seafood": 3
+      }
+    },
+    "test": {
+      "examples": 200,
+      "distinct_targets": 138,
+      "non_item": 56,
+      "unseen_brand": 0,
+      "unseen_product": 0,
+      "ocr_noise": {
+        "none": 86,
+        "light": 65,
+        "medium": 41,
+        "heavy": 8
+      },
+      "categories": {
+        "alcohol": 6,
+        "baby": 3,
+        "bakery": 9,
+        "chilled": 8,
+        "confectionery": 7,
+        "crisps": 9,
+        "cupboard": 20,
+        "dairy": 12,
+        "drinks": 15,
+        "food to go": 10,
+        "frozen": 6,
+        "fruit & veg": 11,
+        "health & beauty": 3,
+        "household": 5,
+        "meat": 6,
+        "news & magazines": 7,
+        "non_item": 56,
+        "pets": 6,
+        "seafood": 1
+      }
+    }
+  }
+}

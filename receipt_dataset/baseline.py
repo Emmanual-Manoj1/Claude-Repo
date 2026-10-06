@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Baseline classifier and evaluator for the item-name dataset.
 
-Trains character n-gram TF-IDF + logistic regression on train.jsonl and
-reports accuracy on test.jsonl, broken down by OCR noise level, category and
-unseen brand. Use it as the score your real model has to beat.
+Trains on train.jsonl using character n-gram TF-IDF features, then reports
+accuracy on test.jsonl broken down by OCR noise level, category and unseen
+brand. Use it as the score your real model has to beat.
 
     pip install scikit-learn
     python baseline.py --data data_items
+    python baseline.py --data data_uk --test real_test/sainsburys_2026-10-05.jsonl
+
+--model nn (default) predicts the target of the most similar training line,
+so it works for thousands of item names. --model logreg trains a logistic
+regression classifier: slower, and only sensible for --target generic.
 
 To score your own model, write one JSON line per test example with
 {"id": ..., "prediction": ...} and run:
@@ -33,7 +38,11 @@ def report(rows, predictions):
     buckets = defaultdict(lambda: [0, 0])
     for r in rows:
         ok = normalise(predictions[r["id"]]) == normalise(r["target"])
-        keys = ["overall", f"noise={r['ocr_noise']}", f"category={r['category']}"]
+        keys = ["overall", f"noise={r.get('ocr_noise')}", f"category={r.get('category')}"]
+        if r["target"] == "Non-Item" or normalise(predictions[r["id"]]) == "non-item":
+            keys.append("non_item_lines" if r["target"] == "Non-Item" else "item_lines")
+        else:
+            keys.append("item_lines")
         if r.get("unseen_brand"):
             keys.append("unseen_brand")
         if r.get("unseen_product"):
@@ -51,12 +60,15 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--data", default="data_items")
+    ap.add_argument("--test", help="test file (default: <data>/test.jsonl); use a "
+                                   "hand-labelled real_test file to measure real accuracy")
+    ap.add_argument("--model", choices=["nn", "logreg"], default="nn")
     ap.add_argument("--predictions", help="score this file instead of training")
     ap.add_argument("--errors", type=int, default=15, help="mistakes to print")
     args = ap.parse_args()
 
     data = Path(args.data)
-    test = load(data / "test.jsonl")
+    test = load(args.test or data / "test.jsonl")
 
     if args.predictions:
         predictions = {p["id"]: p["prediction"] for p in load(args.predictions)}
@@ -65,19 +77,25 @@ def main():
             raise SystemExit(f"{len(missing)} test ids have no prediction, e.g. {missing[:3]}")
     else:
         from sklearn.feature_extraction.text import TfidfVectorizer
-        from sklearn.linear_model import LogisticRegression
-        from sklearn.pipeline import make_pipeline
 
         train = load(data / "train.jsonl")
-        model = make_pipeline(
-            TfidfVectorizer(analyzer="char_wb", ngram_range=(2, 5), lowercase=True,
-                            sublinear_tf=True, min_df=2),
-            LogisticRegression(max_iter=1000, C=20),
-        )
-        print(f"training on {len(train)} examples ...")
-        model.fit([r["input"] for r in train], [r["target"] for r in train])
-        predictions = dict(zip((r["id"] for r in test), map(str,
-                               model.predict([r["input"] for r in test]))))
+        vec = TfidfVectorizer(analyzer="char", ngram_range=(1, 4), lowercase=True,
+                              sublinear_tf=True, min_df=2)
+        print(f"training {args.model} on {len(train)} examples ...")
+        x_train = vec.fit_transform(r["input"] for r in train)
+        x_test = vec.transform(r["input"] for r in test)
+        if args.model == "nn":
+            labels = [r["target"] for r in train]
+            guesses = []
+            for start in range(0, x_test.shape[0], 500):  # keep memory bounded
+                sims = x_test[start:start + 500] @ x_train.T
+                guesses += [labels[i] for i in sims.argmax(axis=1).A1]
+        else:
+            from sklearn.linear_model import LogisticRegression
+            clf = LogisticRegression(max_iter=1000, C=20)
+            clf.fit(x_train, [r["target"] for r in train])
+            guesses = map(str, clf.predict(x_test))
+        predictions = dict(zip((r["id"] for r in test), guesses))
 
     report(test, predictions)
     wrong = [r for r in test if normalise(predictions[r["id"]]) != normalise(r["target"])]

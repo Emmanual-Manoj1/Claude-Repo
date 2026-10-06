@@ -1,0 +1,78 @@
+{"id": "scan000-row00", "input": "Sainsbury's", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row01", "input": "Helplng everyone eat beuten", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row02", "input": "CAMDN ABBEY ROAD OC", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row03", "input": "O207 62554VA", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row04", "input": "Salnsbur y s SUpermakeTs t", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row05", "input": "30 Holborn ondon EOIN2H", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row06", "input": "Www.SainsbUr yS. CO UK", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row07", "input": "Vat Number 660 4548 36", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row08", "input": "PAW PATROL 450", "target": "Paw Patrol", "name": "Paw Patrol", "generic": "Magazine", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row09", "input": "CBEEBIES WEEKLY 450", "target": "CBeebies Weekly", "name": "CBeebies Weekly", "generic": "Magazine", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row10", "input": "BAGUETTE", "target": "Baguette", "name": "Baguette", "generic": "Baguette", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row11", "input": "DORITOS CO0L43G CO 90", "target": "Doritos Cool Original", "name": "Doritos Cool Original", "generic": "Tortilla Chips", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row12", "input": "MONSTER MUNGH LO 90", "target": "Monster Munch", "name": "Monster Munch", "generic": "Crisps", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row13", "input": "CHTCKEN NOODLES 0 80", "target": "Chicken Noodles", "name": "Chicken Noodles", "generic": "Instant Noodles", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row14", "input": "MIGHT STRAWBRY 160G £O 40", "target": "Muller Light Strawberry", "name": "Muller Light Strawberry", "generic": "Yogurt", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row15", "input": "TUNA & SWEETCORN SW 22.05", "target": "Tuna & Sweetcorn Sandwich", "name": "Tuna & Sweetcorn Sandwich", "generic": "Sandwich", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row16", "input": "FLORA BUTTERY SPREAD A1 50", "target": "Flora Buttery Spread", "name": "Flora Buttery Spread", "generic": "Butter Spread", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row17", "input": "OASIS SUM FRT 500ML 155", "target": "Oasis Summer Fruits", "name": "Oasis Summer Fruits", "generic": "Fruit Drink", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row18", "input": "*RIBENA BLK 500ML 9160", "target": "Ribena Blackcurrant", "name": "Ribena Blackcurrant", "generic": "Fruit Drink", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row19", "input": "EGG & CRESS SW 0155", "target": "Egg & Cress Sandwich", "name": "Egg & Cress Sandwich", "generic": "Sandwich", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row20", "input": "2 X Meal Deal HO1 55", "target": "Meal Deal", "name": "Meal Deal", "generic": "Meal Deal", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row21", "input": "JS HOUMOUS 200G 120", "target": "Houmous", "name": "Houmous", "generic": "Houmous", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row22", "input": "13 Sub Tota- P2245", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row23", "input": "PROMOTIONS -01.55", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row24", "input": "TOTAL TO PAY £20.90", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row25", "input": "TICTAC FRUIT AD £1.30", "target": "Tic Tac Fruit Adventure", "name": "Tic Tac Fruit Adventure", "generic": "Mints", "category": "real", "ocr_noise": "real"}
+{"id": "scan000-row26", "input": "C23.75", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row00", "input": "CAMDN ABBEY ROAD LOC", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row01", "input": "0207 625 5474", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row02", "input": "Sainsbur y s upermakets td", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row03", "input": "33 Holborn London EC1N 2HT", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row04", "input": "www.scainsburys. Co.uk", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row06", "input": "PAW PATROL £4.50", "target": "Paw Patrol", "name": "Paw Patrol", "generic": "Magazine", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row07", "input": "CBEEBIES WEEKLY E450", "target": "CBeebies Weekly", "name": "CBeebies Weekly", "generic": "Magazine", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row08", "input": "BAGUETTE 1 00", "target": "Baguette", "name": "Baguette", "generic": "Baguette", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row09", "input": "DORITOS COOL 43G £O 90", "target": "Doritos Cool Original", "name": "Doritos Cool Original", "generic": "Tortilla Chips", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row10", "input": "*MONSTER MUNCH O 90", "target": "Monster Munch", "name": "Monster Munch", "generic": "Crisps", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row11", "input": "CHICKEN NOODLES £0.80", "target": "Chicken Noodles", "name": "Chicken Noodles", "generic": "Instant Noodles", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row12", "input": "MLIGHT STRAWBRY 160G £0 40", "target": "Muller Light Strawberry", "name": "Muller Light Strawberry", "generic": "Yogurt", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row13", "input": "TUNA 8 SWEETCORN SW 2 05", "target": "Tuna & Sweetcorn Sandwich", "name": "Tuna & Sweetcorn Sandwich", "generic": "Sandwich", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row14", "input": "FLORA BUTTERY SPREAD 1 50", "target": "Flora Buttery Spread", "name": "Flora Buttery Spread", "generic": "Butter Spread", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row15", "input": "*OASIS SUM FRT 500ML 1 55", "target": "Oasis Summer Fruits", "name": "Oasis Summer Fruits", "generic": "Fruit Drink", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row16", "input": "*RIBENA BLK 50OML 160", "target": "Ribena Blackcurrant", "name": "Ribena Blackcurrant", "generic": "Fruit Drink", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row17", "input": "EGG & CRESS SW 1 55", "target": "Egg & Cress Sandwich", "name": "Egg & Cress Sandwich", "generic": "Sandwich", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row18", "input": "2 X Meal Deal 155", "target": "Meal Deal", "name": "Meal Deal", "generic": "Meal Deal", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row20", "input": "13 Sub Total- 2245", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row21", "input": "PROMOT IONS O1.55", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row22", "input": "TOTAL TO PAY 20 90", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row23", "input": "*|ICTAC FRUIT AD e1.30", "target": "Tic Tac Fruit Adventure", "name": "Tic Tac Fruit Adventure", "generic": "Mints", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row24", "input": "14 Sub Total £23.75", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row25", "input": "PROMOTI ONS -£1.55", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan002-row26", "input": "TOTAL TO PAY L22.20", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row01", "input": "Helping everyone eat bette", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row02", "input": "CAMON ABBEY ROAD 0C", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row03", "input": "O20V 625 54V4", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row04", "input": "Sainsbur ySUpeaKets Lt", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row05", "input": "3CHolbor London ON2H", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row06", "input": "WWW.SalnsUrySCO UK", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row07", "input": "Vat NuMbe A 6604548 36", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row09", "input": "CBEEBIES WEEKUY 450", "target": "CBeebies Weekly", "name": "CBeebies Weekly", "generic": "Magazine", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row11", "input": "DORIT0S COOU43G O 90", "target": "Doritos Cool Original", "name": "Doritos Cool Original", "generic": "Tortilla Chips", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row12", "input": "MONSIER MUNCH O 90", "target": "Monster Munch", "name": "Monster Munch", "generic": "Crisps", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row13", "input": "CHICKEN NOODES O 80", "target": "Chicken Noodles", "name": "Chicken Noodles", "generic": "Instant Noodles", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row14", "input": "MUIGHTSTRAWBRY 1600", "target": "Muller Light Strawberry", "name": "Muller Light Strawberry", "generic": "Yogurt", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row15", "input": "TUNA SWEETCORN GM A2O5", "target": "Tuna & Sweetcorn Sandwich", "name": "Tuna & Sweetcorn Sandwich", "generic": "Sandwich", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row16", "input": "FLORA BUTTERYSPREAD", "target": "Flora Buttery Spread", "name": "Flora Buttery Spread", "generic": "Butter Spread", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row17", "input": "OASISISUM FRT 500ML 155", "target": "Oasis Summer Fruits", "name": "Oasis Summer Fruits", "generic": "Fruit Drink", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row18", "input": "RIBENA BLK500ML E60", "target": "Ribena Blackcurrant", "name": "Ribena Blackcurrant", "generic": "Fruit Drink", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row19", "input": "EGG & CRESS SW 156", "target": "Egg & Cress Sandwich", "name": "Egg & Cress Sandwich", "generic": "Sandwich", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row20", "input": "2 X Meal Deal A55", "target": "Meal Deal", "name": "Meal Deal", "generic": "Meal Deal", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row21", "input": "US HOUMOUS 200G 12O", "target": "Houmous", "name": "Houmous", "generic": "Houmous", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row22", "input": "13 Sub Total 2245", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row23", "input": "PROMOT IONS 155", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row24", "input": "TOTALTO PAY 20 90", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row25", "input": "TICTAC FRUIT AD", "target": "Tic Tac Fruit Adventure", "name": "Tic Tac Fruit Adventure", "generic": "Mints", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row26", "input": "14 Sub Total 23 75", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row27", "input": "PROMOTIONS -£1.55", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
+{"id": "scan003-row28", "input": "TOTAL TO PAY £22.20", "target": "Non-Item", "name": "Non-Item", "generic": "Non-Item", "category": "real", "ocr_noise": "real"}
